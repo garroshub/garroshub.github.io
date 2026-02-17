@@ -74,13 +74,6 @@
         $(".js-colorlib-nav-toggle").removeClass("active");
       }
     });
-
-    $(window).scroll(function () {
-      if ($("body").hasClass("offcanvas")) {
-        $("body").removeClass("offcanvas");
-        $(".js-colorlib-nav-toggle").removeClass("active");
-      }
-    });
   };
 
   var clickMenu = function () {

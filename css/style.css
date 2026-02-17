@@ -238,6 +238,23 @@ body.offcanvas #colorlib-aside {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  #colorlib-aside {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.offcanvas {
+    overflow: hidden;
+  }
+
+  .timeline-text,
+  .timeline-label,
+  .repo-description,
+  .blog-description {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 
 .home-link:hover {
