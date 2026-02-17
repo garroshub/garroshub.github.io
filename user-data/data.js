@@ -66,7 +66,7 @@ export const researchSections = [
       {
         title: "Digital Strategies in Wildfire Management: Social Media Analytics and Web 3.0 Integration",
         duration: "Feb 2024",
-        subtitle: "Discover Sustainability, 5, 92",
+        subtitle: "Discover Sustainability, 5, Article 92",
         details: [
           "Integrates social media analytics into wildfire management to improve prediction, monitoring, and response efficiency.",
           "Highlights policy and resource allocation impacts and the role of Web 3.0 in decentralized, real-time data streams.",
