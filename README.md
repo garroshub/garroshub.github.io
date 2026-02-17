@@ -1,6 +1,6 @@
-# Garros Gong — Academic Homepage
+# Garros Gong — Personal Website Template
 
-Personal academic homepage hosted on GitHub Pages.
+This repository serves as a clean, academic/work personal website template hosted on GitHub Pages.
 
 ## Live Site
 
@@ -8,7 +8,7 @@ Personal academic homepage hosted on GitHub Pages.
 
 ## Contents
 
-- Single-page academic profile
+- Single-page profile (academic or professional)
 - Research, publications, and working papers
 - Professional experience and education
 - Media contributions and personal interests
