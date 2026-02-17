@@ -35,9 +35,10 @@ function populateBio(items, id) {
   render(tpl, el);
 }
 
-function buildMailto(email, subject) {
+function buildMailto(email, subject, body) {
   const encodedSubject = encodeURIComponent(subject || "");
-  return `mailto:${email}?subject=${encodedSubject}`;
+  const encodedBody = encodeURIComponent(body || "");
+  return `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
 }
 
 function populateCollabCta(data, id) {
@@ -48,39 +49,128 @@ function populateCollabCta(data, id) {
       <div class="collab-title">${data.title}</div>
       <p class="collab-body">${data.body}</p>
       <div class="collab-actions">
-        <a
-          class="collab-btn"
-          href=${buildMailto(data.academicEmail, data.academicSubject)}
-          data-mailto=${buildMailto(data.academicEmail, data.academicSubject)}
-        >
+        <button type="button" class="collab-btn" data-recipient="academic">
           <i class="fa fa-envelope"></i>
           <i class="fa fa-graduation-cap"></i>
           ${data.academicLabel}
-        </a>
-        <a
-          class="collab-btn secondary"
-          href=${buildMailto(data.personalEmail, data.personalSubject)}
-          data-mailto=${buildMailto(data.personalEmail, data.personalSubject)}
-        >
+        </button>
+        <button type="button" class="collab-btn secondary" data-recipient="personal">
           <i class="fa fa-envelope"></i>
           <i class="fa fa-user"></i>
           ${data.personalLabel}
-        </a>
+        </button>
       </div>
     </div>
   `;
   render(tpl, el);
 }
 
-function setupMailtoButtons() {
-  const buttons = document.querySelectorAll(".collab-btn[data-mailto]");
-  if (!buttons.length) return;
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      event.preventDefault();
-      const href = btn.getAttribute("data-mailto");
-      if (href) window.location.href = href;
+function setupCollabModal(data) {
+  const modal = document.getElementById("collab-modal");
+  const subjectInput = document.getElementById("collab-subject");
+  const messageInput = document.getElementById("collab-message");
+  const sendBtn = document.getElementById("collab-send");
+  const copyEmailBtn = document.getElementById("collab-copy-email");
+  const copyMessageBtn = document.getElementById("collab-copy-message");
+  const recipientButtons = document.querySelectorAll(".recipient-btn");
+  const ctaButtons = document.querySelectorAll(".collab-btn[data-recipient]");
+  if (!modal || !subjectInput || !messageInput || !sendBtn) return;
+
+  const recipientMap = {
+    academic: {
+      email: data.academicEmail,
+      subject: data.academicSubject,
+    },
+    personal: {
+      email: data.personalEmail,
+      subject: data.personalSubject,
+    },
+  };
+
+  let activeRecipient = "academic";
+
+  function setRecipient(key) {
+    activeRecipient = key;
+    recipientButtons.forEach((btn) => {
+      const isActive = btn.getAttribute("data-recipient") === key;
+      btn.classList.toggle("active", isActive);
     });
+    subjectInput.value = recipientMap[key].subject || "";
+  }
+
+  function openModal(recipientKey) {
+    setRecipient(recipientKey || "academic");
+    if (!messageInput.value) {
+      messageInput.value = data.messageTemplate || "";
+    }
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    subjectInput.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  function copyText(text) {
+    if (!text) return;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text);
+      return;
+    }
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+
+  ctaButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      openModal(btn.getAttribute("data-recipient"));
+    });
+  });
+
+  recipientButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setRecipient(btn.getAttribute("data-recipient"));
+    });
+  });
+
+  sendBtn.addEventListener("click", () => {
+    const subject = subjectInput.value.trim();
+    const body = messageInput.value.trim();
+    const { email } = recipientMap[activeRecipient];
+    window.location.href = buildMailto(email, subject, body);
+  });
+
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener("click", () => {
+      copyText(recipientMap[activeRecipient].email);
+    });
+  }
+
+  if (copyMessageBtn) {
+    copyMessageBtn.addEventListener("click", () => {
+      copyText(messageInput.value.trim());
+    });
+  }
+
+  modal.querySelectorAll("[data-modal-close]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("open")) {
+      closeModal();
+    }
   });
 }
 
@@ -343,4 +433,4 @@ fetchReposFromGit(gitRepo);
 populateMedia(media, "media");
 populateInterests(interests, "interests");
 populateSidebarLinks(contactLinks, "sidebar-links");
-setupMailtoButtons();
+setupCollabModal(collabCta);

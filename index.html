@@ -214,5 +214,54 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
+
+    <div id="collab-modal" class="collab-modal" aria-hidden="true">
+      <div class="collab-modal-overlay" data-modal-close></div>
+      <div class="collab-modal-content" role="dialog" aria-modal="true" aria-labelledby="collab-modal-title">
+        <button type="button" class="collab-modal-close" aria-label="Close" data-modal-close>
+          &times;
+        </button>
+        <h3 id="collab-modal-title">Leave a message</h3>
+
+        <div class="collab-field">
+          <label>Recipient</label>
+          <div class="collab-recipient-toggle">
+            <button type="button" class="recipient-btn" data-recipient="academic">
+              <i class="fa fa-graduation-cap"></i>
+              Academic
+            </button>
+            <button type="button" class="recipient-btn" data-recipient="personal">
+              <i class="fa fa-user"></i>
+              Personal
+            </button>
+          </div>
+        </div>
+
+        <div class="collab-field">
+          <label for="collab-subject">Subject</label>
+          <input id="collab-subject" type="text" />
+        </div>
+
+        <div class="collab-field">
+          <label for="collab-message">Message</label>
+          <textarea id="collab-message" rows="6"></textarea>
+        </div>
+
+        <div class="collab-actions modal-actions">
+          <button type="button" class="collab-btn" id="collab-send">
+            <i class="fa fa-envelope"></i>
+            Open Email Client
+          </button>
+          <button type="button" class="collab-btn secondary" id="collab-copy-email">
+            <i class="fa fa-copy"></i>
+            Copy Email
+          </button>
+          <button type="button" class="collab-btn secondary" id="collab-copy-message">
+            <i class="fa fa-clipboard"></i>
+            Copy Message
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

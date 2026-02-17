@@ -14,15 +14,17 @@ export const bio = [
 ];
 
 export const collabCta = {
-  title: "Open to Collaboration / Affiliation",
+  title: "Open to Collaboration / Affiliation & Consulting",
   body:
-    "I recently completed my Ph.D. and I'm actively seeking academic collaboration and affiliation opportunities for interdisciplinary research spanning decision science, applied economics, and AI-enabled decision-making (and related areas). I also support select advisory engagements in data, AI, and digital transformation for finance and public-sector decision systems.",
+    "I recently completed my Ph.D. and I'm actively seeking academic collaboration and affiliation opportunities for interdisciplinary research spanning decision science, applied economics, and AI-enabled decision-making (and related areas). I also provide consulting services in data, AI, and digital transformation for finance and public-sector decision systems.",
   academicEmail: "g7gong@uwaterloo.ca",
   personalEmail: "kuyigougou@gmail.com",
   academicLabel: "Email (Academic)",
   personalLabel: "Email (Personal)",
   academicSubject: "Collaboration / Affiliation Inquiry",
-  personalSubject: "Advisory / Consulting Inquiry",
+  personalSubject: "Consulting Inquiry",
+  messageTemplate:
+    "Hi Garros,\n\nI'm reaching out about a potential collaboration or consulting opportunity.\n\nContext:\n- \n\nAvailability:\n- \n\nBest,\n",
 };
 
 export const researchInterests = [
