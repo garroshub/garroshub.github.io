@@ -115,7 +115,7 @@ body.offcanvas #colorlib-aside {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .exp-title {
@@ -126,9 +126,7 @@ body.offcanvas #colorlib-aside {
 }
 
 .exp-title .blog-heading {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 .publish-date {
