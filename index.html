@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Garros Gong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Academic portfolio of Garros Gong" />
+    <meta name="keywords" content="portfolio, research, decision science" />
+    <meta name="author" content="Garros Gong" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/vinaysomawat/vinaysomawat.github.io@master/css/style.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <div id="colorlib-page">
+      <div class="container-wrap">
+        <a
+          href="#"
+          class="js-colorlib-nav-toggle colorlib-nav-toggle"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-expanded="false"
+          aria-controls="navbar"
+          ><i></i
+        ></a>
+        <aside
+          id="colorlib-aside"
+          role="complementary"
+          class="border js-fullheight no-print"
+        >
+          <div class="text-center">
+            <div class="author-img">
+              <img id="profile-img" src="garros.jpg" alt="Garros Gong" />
+            </div>
+            <h1 id="colorlib-logo"><a href="./index.html" id="sidebar-name">Garros Gong</a></h1>
+            <span class="position" id="sidebar-title"
+              >Decision Scientist | Quantitative Strategist | Applied Economist</span
+            >
+            <span class="position" id="sidebar-meta">Toronto, ON, Canada</span>
+          </div>
+          <nav
+            id="colorlib-main-menu"
+            role="navigation"
+            class="navbar"
+            style="padding-top: 2em"
+          >
+            <div id="navbar" class="collapse">
+              <ul>
+                <li class="active"><a href="#" data-nav-section="about">About Me</a></li>
+                <li><a href="#" data-nav-section="experience">Work Experience</a></li>
+                <li><a href="#" data-nav-section="research">Academic Research</a></li>
+                <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="projects">Sample Projects</a></li>
+                <li><a href="#" data-nav-section="media">Media Influence</a></li>
+                <li><a href="#" data-nav-section="interests">Personal Interests</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div class="colorlib-footer">
+            <ul id="sidebar-links"></ul>
+          </div>
+        </aside>
+        <div id="colorlib-main">
+          <section class="colorlib-about" data-section="about">
+            <div class="colorlib-narrow-content">
+              <div class="row animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>About Me</h1>
+                  <div id="bio"></div>
+                  <div class="subheading">
+                    <span class="profile-badge brown-badge">Research Interests</span>
+                  </div>
+                  <div id="research-interests" class="tags-container"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="colorlib-experience" data-section="experience">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Work Experience</h1>
+                </div>
+              </div>
+              <div id="experience"></div>
+            </div>
+          </section>
+
+          <section class="colorlib-experience" data-section="research">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Academic Research</h1>
+                </div>
+              </div>
+              <div id="research"></div>
+            </div>
+          </section>
+
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+              </div>
+              <div id="education"></div>
+            </div>
+          </section>
+
+          <section class="colorlib-experience no-print" data-section="projects">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Sample Projects</h1>
+                </div>
+              </div>
+              <ul
+                id="accordion"
+                class="accordion animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <li class="open">
+                  <ul
+                    id="repos"
+                    class=""
+                    style="display: block; padding: 0px"
+                  ></ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="colorlib-blogs no-print" data-section="media">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Media Influence</h1>
+                </div>
+              </div>
+              <ul
+                id="accordion"
+                class="accordion animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <li class="open">
+                  <ul
+                    id="media"
+                    class="submenu"
+                    style="display: flex; flex-direction: column; gap: 20px"
+                  ></ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="colorlib-skills" data-section="interests">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Personal Interests</h1>
+                </div>
+              </div>
+              <div id="interests" class="row"></div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
