@@ -242,6 +242,15 @@ body.offcanvas #colorlib-aside {
   #colorlib-aside {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 2em;
+  }
+
+  #colorlib-aside .colorlib-footer {
+    position: static;
+    margin-top: 2em;
+    padding-bottom: 1em;
+    visibility: visible;
+    opacity: 1;
   }
 
   body.offcanvas {
