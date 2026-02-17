@@ -2,6 +2,7 @@ import { html, render } from "https://unpkg.com/lit-html?module";
 import {
   sidebar,
   bio,
+  collabCta,
   researchInterests,
   education,
   researchSections,
@@ -31,6 +32,31 @@ function populateBio(items, id) {
   const el = document.getElementById(id);
   if (!el) return;
   const tpl = html`${items.map((line) => html`<p>${line}</p>`)}`;
+  render(tpl, el);
+}
+
+function buildMailto(email, subject) {
+  const encodedSubject = encodeURIComponent(subject || "");
+  return `mailto:${email}?subject=${encodedSubject}`;
+}
+
+function populateCollabCta(data, id) {
+  const el = document.getElementById(id);
+  if (!el || !data) return;
+  const tpl = html`
+    <div class="collab-cta animate-box" data-animate-effect="fadeInLeft">
+      <div class="collab-title">${data.title}</div>
+      <p class="collab-body">${data.body}</p>
+      <div class="collab-actions">
+        <a class="collab-btn" href=${buildMailto(data.academicEmail, data.academicSubject)}>
+          ${data.academicLabel}
+        </a>
+        <a class="collab-btn secondary" href=${buildMailto(data.personalEmail, data.personalSubject)}>
+          ${data.personalLabel}
+        </a>
+      </div>
+    </div>
+  `;
   render(tpl, el);
 }
 
@@ -283,6 +309,7 @@ function populateSidebarLinks(items, id) {
 }
 
 setSidebar();
+populateCollabCta(collabCta, "collab-cta");
 populateBio(bio, "bio");
 populateResearchInterests(researchInterests, "research-interests");
 populateTimeline(education, "education");

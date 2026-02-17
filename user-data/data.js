@@ -13,6 +13,18 @@ export const bio = [
   "Strategic finance leader driving capital investment, enterprise profitability, and digital transformation across Tier 1 financial institutions. Integrates data-backed economic insight with technical strategy to lead AI adoption and architect custom Generative AI agents that scale enterprise decision-making. Bridges decision science and executive strategy to translate complex models into board-level investment playbooks that optimize capital deployment and expand ROE.",
 ];
 
+export const collabCta = {
+  title: "Open to Collaboration / Affiliation",
+  body:
+    "I recently completed my Ph.D. and I'm actively seeking academic collaboration and affiliation opportunities for interdisciplinary research spanning decision science, applied economics, and AI-enabled decision-making (and related areas). I also support select advisory engagements in data, AI, and digital transformation for finance and public-sector decision systems.",
+  academicEmail: "g7gong@uwaterloo.ca",
+  personalEmail: "kuyigougou@gmail.com",
+  academicLabel: "Email (Academic)",
+  personalLabel: "Email (Personal)",
+  academicSubject: "Collaboration / Affiliation Inquiry",
+  personalSubject: "Advisory / Consulting Inquiry",
+};
+
 export const researchInterests = [
   "AI in Decision-Making",
   "Applied Economics",
@@ -315,8 +327,6 @@ export const interests = [
 ];
 
 export const contactLinks = [
-  { label: "Email (Personal)", link: "mailto:kuyigougou@gmail.com", icon: "fa fa-envelope" },
-  { label: "Email (Academic)", link: "mailto:g7gong@uwaterloo.ca", icon: "fa fa-envelope" },
   { label: "LinkedIn", link: "https://www.linkedin.com/in/garros-gong/", icon: "fa fa-linkedin" },
   { label: "GitHub", link: "https://github.com/garroshub", icon: "fa fa-github" },
   {
