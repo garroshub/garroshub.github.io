@@ -224,21 +224,21 @@ body.offcanvas #colorlib-aside {
   background: linear-gradient(135deg, #f5f6f8, #e7eaee);
   border: 1px solid #e0e4ea;
   border-radius: 8px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   margin: 12px 0 16px;
 }
 
 .collab-title {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 800;
   margin-bottom: 6px;
   color: #111;
 }
 
 .collab-body {
   margin: 0 0 12px 0;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: #222;
 }
@@ -253,13 +253,18 @@ body.offcanvas #colorlib-aside {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 12px;
+  gap: 6px;
+  padding: 9px 14px;
   border-radius: 4px;
   background: #6b7280;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.collab-btn i {
+  font-size: 12px;
 }
 
 .collab-btn.secondary {

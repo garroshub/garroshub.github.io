@@ -48,16 +48,40 @@ function populateCollabCta(data, id) {
       <div class="collab-title">${data.title}</div>
       <p class="collab-body">${data.body}</p>
       <div class="collab-actions">
-        <a class="collab-btn" href=${buildMailto(data.academicEmail, data.academicSubject)}>
+        <a
+          class="collab-btn"
+          href=${buildMailto(data.academicEmail, data.academicSubject)}
+          data-mailto=${buildMailto(data.academicEmail, data.academicSubject)}
+        >
+          <i class="fa fa-envelope"></i>
+          <i class="fa fa-graduation-cap"></i>
           ${data.academicLabel}
         </a>
-        <a class="collab-btn secondary" href=${buildMailto(data.personalEmail, data.personalSubject)}>
+        <a
+          class="collab-btn secondary"
+          href=${buildMailto(data.personalEmail, data.personalSubject)}
+          data-mailto=${buildMailto(data.personalEmail, data.personalSubject)}
+        >
+          <i class="fa fa-envelope"></i>
+          <i class="fa fa-user"></i>
           ${data.personalLabel}
         </a>
       </div>
     </div>
   `;
   render(tpl, el);
+}
+
+function setupMailtoButtons() {
+  const buttons = document.querySelectorAll(".collab-btn[data-mailto]");
+  if (!buttons.length) return;
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      const href = btn.getAttribute("data-mailto");
+      if (href) window.location.href = href;
+    });
+  });
 }
 
 function populateResearchInterests(items, id) {
@@ -296,7 +320,7 @@ function populateSidebarLinks(items, id) {
   const template = html`${items.map(
     (item) => html`
       <li>
-        <a href="${item.link}" target="_blank">
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
           ${item.iconUrl
             ? html`<img class="contact-icon-img" src="${item.iconUrl}" alt="${item.label} icon" />`
             : html`<i class="${item.icon}"></i>`}
@@ -319,3 +343,4 @@ fetchReposFromGit(gitRepo);
 populateMedia(media, "media");
 populateInterests(interests, "interests");
 populateSidebarLinks(contactLinks, "sidebar-links");
+setupMailtoButtons();
