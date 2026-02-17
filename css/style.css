@@ -48,6 +48,15 @@ body.offcanvas #colorlib-aside {
   text-align: center;
 }
 
+.contact-icon-img {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #dfe3e8;
+}
+
 #colorlib-aside .colorlib-footer ul {
   text-align: left;
   padding-left: 0;

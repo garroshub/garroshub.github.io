@@ -315,10 +315,20 @@ export const interests = [
 ];
 
 export const contactLinks = [
-  { label: "Personal Email", link: "mailto:kuyigougou@gmail.com", icon: "fa fa-envelope" },
-  { label: "Academic Email", link: "mailto:g7gong@uwaterloo.ca", icon: "fa fa-envelope" },
+  { label: "Email (Personal)", link: "mailto:kuyigougou@gmail.com", icon: "fa fa-envelope" },
+  { label: "Email (Academic)", link: "mailto:g7gong@uwaterloo.ca", icon: "fa fa-envelope" },
   { label: "LinkedIn", link: "https://www.linkedin.com/in/garros-gong/", icon: "fa fa-linkedin" },
   { label: "GitHub", link: "https://github.com/garroshub", icon: "fa fa-github" },
+  {
+    label: "Scholar",
+    link: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
+    iconUrl: "https://www.google.com/s2/favicons?domain=scholar.google.ca&sz=64",
+  },
+  {
+    label: "ResearchGate",
+    link: "https://www.researchgate.net/profile/Garros-Gong?ev=hdr_xprf",
+    iconUrl: "https://www.google.com/s2/favicons?domain=researchgate.net&sz=64",
+  },
 ];
 
 export const projectsFallback = [

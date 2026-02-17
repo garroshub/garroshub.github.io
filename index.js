@@ -271,7 +271,9 @@ function populateSidebarLinks(items, id) {
     (item) => html`
       <li>
         <a href="${item.link}" target="_blank">
-          <i class="${item.icon}"></i>
+          ${item.iconUrl
+            ? html`<img class="contact-icon-img" src="${item.iconUrl}" alt="${item.label} icon" />`
+            : html`<i class="${item.icon}"></i>`}
           <span>${item.label}</span>
         </a>
       </li>
