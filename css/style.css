@@ -213,6 +213,26 @@ body.offcanvas #colorlib-aside {
   border: 1px solid #9ca3af;
 }
 
+@media screen and (max-width: 768px) {
+  .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+    padding: 0.9em;
+  }
+
+  .exp-heading {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .exp-title .blog-heading {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+
 .home-link:hover {
   background: #dfe3e8;
   color: #000;
