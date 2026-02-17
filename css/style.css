@@ -199,6 +199,20 @@ body.offcanvas #colorlib-aside {
   font-size: 14px;
 }
 
+.research-interests-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.interest-label-badge {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #9ca3af;
+}
+
 .home-link:hover {
   background: #dfe3e8;
   color: #000;
