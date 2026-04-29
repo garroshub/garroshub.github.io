@@ -4,42 +4,30 @@ import {
   bio,
   hero,
   collabCta,
-  researchPillars,
-  industryToResearch,
-  distinctiveApproach,
-  featuredWork,
-  teachingPhilosophy,
-  experienceIntro,
   education,
-  researchSections,
-  experienceSections,
+  featuredPublications,
   media,
-  interests,
+  professionalExperience,
   contactLinks,
-  projectsFallback,
 } from "./user-data/data.js";
-import { URLs } from "./user-data/urls.js";
 
-const { gitRepo } = URLs;
-
-function sectionHeaderTemplate(data, size = "large") {
-  const titleClass = size === "large" ? "section-title" : "detail-title";
-  const subtitleClass = size === "large" ? "section-subtitle" : "detail-subtitle";
+function sectionHeaderTemplate(data) {
   return html`
     <div class="section-header">
-      ${data?.eyebrow ? html`<p class="section-kicker">${data.eyebrow}</p>` : null}
-      ${data?.title ? html`<h2 class="${titleClass}">${data.title}</h2>` : null}
-      ${data?.subtitle ? html`<p class="${subtitleClass}">${data.subtitle}</p>` : null}
-    </div>
-  `;
-}
-
-function detailHeaderTemplate(title, subtitle, eyebrow) {
-  return html`
-    <div class="detail-header">
-      ${eyebrow ? html`<p class="detail-kicker">${eyebrow}</p>` : null}
-      ${title ? html`<h3 class="detail-title">${title}</h3>` : null}
-      ${subtitle ? html`<p class="detail-subtitle">${subtitle}</p>` : null}
+      <div class="section-title-row">
+        ${data?.icon
+          ? html`
+              <span class="section-icon" aria-hidden="true">
+                <i class="fa fa-${data.icon}"></i>
+              </span>
+            `
+          : null}
+        <div>
+          ${data?.eyebrow ? html`<p class="section-kicker">${data.eyebrow}</p>` : null}
+          ${data?.title ? html`<h2 class="section-title">${data.title}</h2>` : null}
+        </div>
+      </div>
+      ${data?.subtitle ? html`<p class="section-subtitle">${data.subtitle}</p>` : null}
     </div>
   `;
 }
@@ -56,7 +44,7 @@ function setSidebar() {
     if (nameEl) {
       nameEl.textContent = sidebar.name;
     }
-    document.title = `${sidebar.name} | Management Science`;
+    document.title = `${sidebar.name} | Academic Homepage`;
   }
 
   const titleEl = document.getElementById("sidebar-title");
@@ -86,83 +74,23 @@ function populateSidebarActions(items, id) {
     return;
   }
 
-  const template = html`
-    ${items.map(
-      (item) => html`
-        <a
-          class="sidebar-action ${item.primary ? "primary" : "secondary"}"
-          href="${item.link}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ${item.label}
-        </a>
-      `
-    )}
-  `;
-
-  render(template, el);
-}
-
-function populateHero(data, paragraphs, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="hero-grid">
-      <div class="paper-panel hero-copy animate-box" data-animate-effect="fadeInLeft">
-        ${paragraphs.map((line) => html`<p class="hero-paragraph">${line}</p>`)}
-        <div class="hero-topic-grid">
-          ${data.researchCards.map(
-            (item) => html`
-              <div class="hero-topic-card">
-                <i class="fa fa-${item.icon}"></i>
-                <span>${item.title}</span>
-              </div>
-            `
-          )}
-        </div>
-        <div class="identity-ribbon">${data.statement}</div>
-        <div class="hero-logo-strip">
-          ${data.logos.map(
-            (item) => html`
-              <div class="hero-logo-card">
-                <img src="${item.src}" alt="${item.label} logo" />
-                <span>${item.label}</span>
-              </div>
-            `
-          )}
-        </div>
-      </div>
-      <div class="hero-side">
-        <div class="paper-panel hero-facts animate-box" data-animate-effect="fadeInRight">
-          <p class="mini-label">At a Glance</p>
-          ${data.quickFacts.map(
-            (item) => html`
-              <div class="fact-item">
-                <div class="fact-icon"><i class="fa fa-${item.icon}"></i></div>
-                <div>
-                  <span class="fact-label">${item.label}</span>
-                  <p class="fact-value">${item.value}</p>
-                </div>
-              </div>
-            `
-          )}
-        </div>
-        <div class="paper-panel hero-focus animate-box" data-animate-effect="fadeInRight">
-          <p class="mini-label">Core Focus</p>
-          <div class="hero-focus-grid">
-            ${paragraphs.map((line) => html`<div class="hero-focus-card"><span>${line}</span></div>`)}
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-
-  render(template, el);
+  render(
+    html`
+      ${items.map(
+        (item) => html`
+          <a
+            class="sidebar-action ${item.primary ? "primary" : "secondary"}"
+            href="${item.link}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ${item.label}
+          </a>
+        `
+      )}
+    `,
+    el
+  );
 }
 
 function populateCollabCta(data, id) {
@@ -171,26 +99,28 @@ function populateCollabCta(data, id) {
     return;
   }
 
-  const template = html`
-    <div class="collab-cta animate-box" data-animate-effect="fadeInUp">
-      <div class="collab-title">${data.title}</div>
-      <p class="collab-body">${data.body}</p>
-      <div class="collab-actions">
-        <button type="button" class="collab-btn" data-recipient="academic">
-          <i class="fa fa-envelope"></i>
-          <i class="fa fa-graduation-cap"></i>
-          ${data.academicLabel}
-        </button>
-        <button type="button" class="collab-btn secondary" data-recipient="personal">
-          <i class="fa fa-envelope"></i>
-          <i class="fa fa-user"></i>
-          ${data.personalLabel}
-        </button>
+  render(
+    html`
+      <div class="collab-strip animate-box" data-animate-effect="fadeInUp">
+        <div class="collab-copy">
+          <p class="section-kicker">Contact</p>
+          <div class="collab-title">${data.title}</div>
+          <p class="collab-body">${data.body}</p>
+        </div>
+        <div class="collab-actions">
+          <button type="button" class="collab-btn" data-recipient="academic">
+            <i class="fa fa-envelope"></i>
+            ${data.academicLabel}
+          </button>
+          <button type="button" class="collab-btn secondary" data-recipient="personal">
+            <i class="fa fa-envelope"></i>
+            ${data.personalLabel}
+          </button>
+        </div>
       </div>
-    </div>
-  `;
-
-  render(template, el);
+    `,
+    el
+  );
 }
 
 function setupCollabModal(data) {
@@ -309,402 +239,150 @@ function setupCollabModal(data) {
   });
 }
 
-function populateResearchPillars(data, id) {
+function populateAbout(data, paragraphs, id) {
   const el = document.getElementById(id);
   if (!el || !data) {
     return;
   }
 
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="paper-panel agenda-panel animate-box" data-animate-effect="fadeInUp">
-      <div class="pillar-grid">
-        ${data.pillars.map(
-          (pillar) => html`
-            <div class="pillar-card">
-              <div class="pillar-icon"><i class="fa fa-${pillar.icon}"></i></div>
-              <h3>${pillar.title}</h3>
-              <p>${pillar.description}</p>
+  render(
+    html`
+      ${sectionHeaderTemplate(data)}
+      <div class="about-summary animate-box" data-animate-effect="fadeInUp">
+        ${paragraphs.map((line) => html`<p>${line}</p>`)}
+      </div>
+      <div class="research-pill-row animate-box" data-animate-effect="fadeInUp">
+        ${data.researchAreas.map(
+          (item) => html`
+            <div class="research-pill">
+              <span class="pill-icon" aria-hidden="true">
+                <i class="fa fa-${item.icon}"></i>
+              </span>
+              <span>${item.title}</span>
             </div>
           `
         )}
       </div>
-      <p class="agenda-footer">${data.subtitle}</p>
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function populateIndustryToResearch(data, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="journey-grid">
-      <div class="paper-panel journey-card animate-box" data-animate-effect="fadeInLeft">
-        <p class="mini-label">${data.industry.title}</p>
-        <p class="journey-copy">${data.industry.description}</p>
-        <div class="journey-tags">
-          ${data.industry.tags.map((tag) => html`<span class="driver-chip">${tag}</span>`)}
-        </div>
-      </div>
-      <div class="journey-arrow" aria-hidden="true"><i class="fa fa-long-arrow-right"></i></div>
-      <div class="paper-panel journey-card journey-pivot animate-box" data-animate-effect="fadeInUp">
-        <p class="mini-label">${data.pivot.title}</p>
-        <h3 class="journey-statement">${data.pivot.statement}</h3>
-        <div class="journey-steps">
-          ${data.pivot.steps.map((step) => html`<span class="step-chip">${step}</span>`)}
-        </div>
-        <p class="journey-copy muted-copy">${data.pivot.detail}</p>
-      </div>
-      <div class="journey-arrow" aria-hidden="true"><i class="fa fa-long-arrow-right"></i></div>
-      <div class="journey-outcomes animate-box" data-animate-effect="fadeInRight">
-        ${data.outcomes.map(
-          (outcome) => html`
-            <div class="paper-panel outcome-card">
-              <p class="mini-label">${outcome.label}</p>
-              <h3>${outcome.title}</h3>
-              <p>${outcome.description}</p>
+      ${data.teachingNote
+        ? html`
+            <p class="about-note animate-box" data-animate-effect="fadeInUp">
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <span>${data.teachingNote}</span>
+            </p>
+          `
+        : null}
+      <div class="logo-row animate-box" data-animate-effect="fadeInUp">
+        ${data.logos.map(
+          (item) => html`
+            <div class="logo-pill">
+              <img src="${item.src}" alt="${item.label} logo" />
+              <span>${item.label}</span>
             </div>
           `
         )}
       </div>
-    </div>
-    <div class="note-strip">${data.footer}</div>
-  `;
-
-  render(template, el);
+    `,
+    el
+  );
 }
 
-function populateDistinctiveApproach(data, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="approach-list">
-      ${data.rows.map(
-        (row) => html`
-          <div class="paper-panel approach-row animate-box" data-animate-effect="fadeInUp">
-            <div class="approach-number">${row.number}</div>
-            <div class="approach-content">
-              <h3>${row.title}</h3>
-              <div class="approach-flow">
-                <div class="approach-cell">
-                  <i class="fa fa-${row.leftIcon}"></i>
-                  <span>${row.leftLabel}</span>
-                </div>
-                <div class="approach-arrow"><i class="fa fa-long-arrow-right"></i></div>
-                <div class="approach-cell">
-                  <i class="fa fa-${row.rightIcon}"></i>
-                  <span>${row.rightLabel}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        `
-      )}
-    </div>
-    <div class="principle-strip">
-      ${data.principles.map((principle) => html`<span class="principle-chip">${principle}</span>`)}
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function populateFeaturedWork(data, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="featured-grid">
-      ${data.cards.map(
-        (card) => html`
-          <div class="featured-card animate-box" data-animate-effect="fadeInUp">
-            <div class="featured-icon"><i class="fa fa-${card.icon}"></i></div>
-            <h3>${card.title}</h3>
-            <p>${card.description}</p>
-          </div>
-        `
-      )}
-    </div>
-    <div class="forward-layout">
-      <div class="paper-panel forward-panel animate-box" data-animate-effect="fadeInLeft">
-        <p class="mini-label">${data.forwardDirection.title}</p>
-        <div class="forward-grid">
-          ${data.forwardDirection.items.map(
-            (item) => html`
-              <div class="forward-card">
-                <div class="forward-icon"><i class="fa fa-${item.icon}"></i></div>
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-              </div>
-            `
-          )}
-        </div>
-      </div>
-      <div class="paper-panel outside-card animate-box" data-animate-effect="fadeInRight">
-        <p class="mini-label">${data.outsideAcademia.eyebrow}</p>
-        <h3>${data.outsideAcademia.title}</h3>
-        <p>${data.outsideAcademia.description}</p>
-        <a
-          href="${data.outsideAcademia.link}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-link"
-        >
-          ${data.outsideAcademia.linkLabel}
-        </a>
-      </div>
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function populateTeachingPhilosophy(data, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="teaching-layout">
-      <div class="teaching-top">
-        <div class="paper-panel teaching-column animate-box" data-animate-effect="fadeInLeft">
-          <p class="mini-label">What AI can help students do</p>
-          <ul class="teaching-list">
-            ${data.aiCanHelp.map((item) => html`<li>${item}</li>`)}
-          </ul>
-        </div>
-        <div class="paper-panel teaching-quote animate-box" data-animate-effect="fadeInUp">
-          ${data.subtitle}
-        </div>
-        <div class="paper-panel teaching-column animate-box" data-animate-effect="fadeInRight">
-          <p class="mini-label">What students still must learn</p>
-          <ul class="teaching-list">
-            ${data.studentsMustLearn.map((item) => html`<li>${item}</li>`)}
-          </ul>
-        </div>
-      </div>
-
-      <div class="teaching-bottom">
-        <div class="paper-panel animate-box" data-animate-effect="fadeInLeft">
-          <p class="mini-label">How I structure learning</p>
-          <div class="teaching-structure">
-            ${data.structure.map(
-              (item) => html`
-                <div class="structure-step">
-                  <span>${item}</span>
-                </div>
-              `
-            )}
-          </div>
-        </div>
-        <div class="paper-panel animate-box" data-animate-effect="fadeInRight">
-          <p class="mini-label">What I want students to leave with</p>
-          <div class="teaching-outcomes">
-            ${data.outcomes.map(
-              (item) => html`
-                <div class="outcome-pill">
-                  <span>${item}</span>
-                </div>
-              `
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div class="course-chip-row animate-box" data-animate-effect="fadeInUp">
-        ${data.courses.map((course) => html`<span class="course-chip">${course}</span>`)}
-      </div>
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function populateExperienceIntro(data, id) {
-  const el = document.getElementById(id);
-  if (!el || !data) {
-    return;
-  }
-
-  const template = html`
-    ${sectionHeaderTemplate(data)}
-    <div class="paper-panel intro-panel animate-box" data-animate-effect="fadeInUp">
-      ${data.body.map((line) => html`<p class="hero-paragraph">${line}</p>`)}
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function tagsTemplate(tags) {
-  if (!tags?.length) {
+function detailListTemplate(details) {
+  if (!details?.length) {
     return null;
   }
 
   return html`
-    <div class="tags-container">
-      ${tags.map((tag) => html`<span class="profile-badge brown-badge">${tag}</span>`)}
-    </div>
+    <ul class="record-details">
+      ${details.map((detail) => html`<li>${detail}</li>`)}
+    </ul>
   `;
 }
 
-function timelineEntryTemplate(item) {
+function educationEntryTemplate(item) {
   return html`
-    <article class="timeline-entry animate-box" data-animate-effect="fadeInUp">
-      <div class="paper-panel timeline-card">
-        <div class="timeline-head">
-          <div class="timeline-brand">
-            ${item.logo
-              ? html`<img class="timeline-logo" src="${item.logo}" alt="${item.title} logo" />`
-              : null}
-            <div>
-              <h4 class="timeline-title">${item.title}</h4>
-              ${item.subtitle ? html`<p class="timeline-subtitle">${item.subtitle}</p>` : null}
-            </div>
+    <article class="record-item animate-box" data-animate-effect="fadeInUp">
+      <div class="record-mark">
+        ${item.logo
+          ? html`<img class="record-logo" src="${item.logo}" alt="${item.title} logo" />`
+          : html`
+              <span class="record-icon" aria-hidden="true">
+                <i class="fa fa-graduation-cap"></i>
+              </span>
+            `}
+      </div>
+      <div class="record-copy">
+        <div class="record-head">
+          <div>
+            <h3 class="record-title">${item.title}</h3>
+            <p class="record-subtitle">${item.subtitle}</p>
           </div>
-          <span class="timeline-duration">${item.duration}</span>
+          <span class="record-duration">${item.duration}</span>
         </div>
-        ${item.details?.length
-          ? html`
-              <ul class="timeline-details">
-                ${item.details.map((detail) => html`<li>${detail}</li>`)}
-              </ul>
-            `
-          : null}
-        ${tagsTemplate(item.tags)}
+        ${detailListTemplate(item.details)}
       </div>
     </article>
   `;
 }
 
-function timelineSectionTemplate(section) {
-  return html`
-    <div class="timeline-section">
-      <h4 class="timeline-section-title">${section.label}</h4>
-      <div class="timeline-list">
-        ${section.items.map((item) => timelineEntryTemplate(item))}
-      </div>
-    </div>
-  `;
-}
-
-function populateTimelineSections(sections, id, heading) {
-  const el = document.getElementById(id);
-  const safeSections = (sections || []).filter(Boolean);
-  if (!el || !safeSections.length) {
-    return;
-  }
-
-  const template = html`
-    <div class="detail-cluster">
-      ${heading ? detailHeaderTemplate(heading.title, heading.subtitle, heading.eyebrow) : null}
-      ${safeSections.map((section) => timelineSectionTemplate(section))}
-    </div>
-  `;
-
-  render(template, el);
-}
-
-function renderRepoSection(items, id, fetched = false) {
+function populateEducation(items, id) {
   const el = document.getElementById(id);
   if (!el || !items?.length) {
     return;
   }
 
-  const template = html`
-    <div class="detail-cluster">
-      ${detailHeaderTemplate(
-        "Selected open projects",
-        fetched
-          ? "A secondary technical portfolio alongside the main academic narrative."
-          : "Fallback project cards when repository metadata is unavailable.",
-        "Technical work"
-      )}
-      <div class="repo-grid">
-        ${items.map(
-          (item) => html`
-            <div class="repo-card animate-box" data-animate-effect="fadeInUp">
-              <a
-                href="${item.link}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="repo-link"
-              >
-                <h4 class="repo-heading">${item.name}</h4>
-                <p class="repo-description">${item.description}</p>
-                <div class="repo-meta">
-                  ${item.language
-                    ? html`
-                        <span><i class="fa fa-code"></i>${item.language}</span>
-                        <span><i class="fa fa-star-o"></i>${item.stars ?? 0}</span>
-                        <span><i class="fa fa-code-fork"></i>${item.forks ?? 0}</span>
-                      `
-                    : html`<span><i class="fa fa-github"></i>GitHub profile</span>`}
-                </div>
-              </a>
-            </div>
-          `
-        )}
+  render(
+    html`
+      ${sectionHeaderTemplate({
+        icon: "graduation-cap",
+        title: "Education",
+        subtitle: "Training in management science, business analytics, and financial mathematics.",
+      })}
+      <div class="record-list">
+        ${items.map((item) => educationEntryTemplate(item))}
       </div>
-    </div>
-  `;
-
-  render(template, el);
+    `,
+    el
+  );
 }
 
-async function fetchReposFromGit(url) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Request failed: ${response.status}`);
-    }
+function publicationCardTemplate(item) {
+  return html`
+    <article class="publication-card animate-box" data-animate-effect="fadeInUp">
+      <div class="publication-top">
+        <span class="pill-icon small" aria-hidden="true">
+          <i class="fa fa-${item.icon}"></i>
+        </span>
+        <span class="publication-status">${item.status}</span>
+      </div>
+      <h3 class="publication-title">${item.title}</h3>
+      <p class="publication-venue">${item.venue}</p>
+      <p class="publication-summary">${item.summary}</p>
+      ${item.link
+        ? html`
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-link">
+              ${item.linkLabel || "Read more"}
+            </a>
+          `
+        : null}
+    </article>
+  `;
+}
 
-    const items = await response.json();
-    const filtered = (items || [])
-      .filter((item) => {
-        const name = (item?.name || "").toLowerCase();
-        return (
-          !name.includes("mixcut") &&
-          !name.includes("mix-cut") &&
-          !name.includes("mix_cut") &&
-          !name.includes("nba") &&
-          !name.includes("garroshub.github.io")
-        );
-      })
-      .slice(0, 3)
-      .map((item) => ({
-        name: item.name,
-        description: item.description || "Repository overview",
-        language: item.language || "Code",
-        stars: item.stars,
-        forks: item.forks,
-        link: `https://github.com/${item.author || "garroshub"}/${item.name}`,
-      }));
-
-    if (filtered.length) {
-      renderRepoSection(filtered, "repos", true);
-      return;
-    }
-  } catch (error) {
-    console.error("Error fetching repos:", error);
+function populateFeaturedPublications(data, id) {
+  const el = document.getElementById(id);
+  if (!el || !data?.items?.length) {
+    return;
   }
 
-  renderRepoSection(projectsFallback, "repos", false);
+  render(
+    html`
+      ${sectionHeaderTemplate(data)}
+      <div class="publication-grid">
+        ${data.items.map((item) => publicationCardTemplate(item))}
+      </div>
+    `,
+    el
+  );
 }
 
 function getFavicon(url) {
@@ -722,76 +400,81 @@ function populateMedia(items, id) {
     return;
   }
 
-  const template = html`
-    ${sectionHeaderTemplate(
-      {
-        eyebrow: "Public Writing and Media",
-        title: "Public-facing work that extends the same research concerns",
-        subtitle:
-          "Media contributions are not the main story of the site, but they show how the research agenda translates into broader public conversation.",
-      },
-      "large"
-    )}
-    <div class="blog-grid">
-      ${items.map(
-        (item) => html`
-          <div class="blog-card animate-box" data-animate-effect="fadeInUp">
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="blog-link">
-              <div class="media-header">
+  render(
+    html`
+      ${sectionHeaderTemplate({
+        icon: "newspaper-o",
+        title: "Selected Media",
+        subtitle: "A few public-facing pieces connected to policy, markets, and institutional change.",
+      })}
+      <div class="media-grid">
+        ${items.map(
+          (item) => html`
+            <article class="media-card animate-box" data-animate-effect="fadeInUp">
+              <div class="media-top">
                 ${item.link
                   ? html`
-                      <img
-                        class="media-logo"
-                        src="${getFavicon(item.link)}"
-                        alt="${item.source} logo"
-                      />
+                      <img class="media-logo" src="${getFavicon(item.link)}" alt="${item.source} logo" />
                     `
                   : null}
-                <span class="mini-label">${item.source}</span>
+                <span class="media-source">${item.source}</span>
+                <span class="media-year">${item.year}</span>
               </div>
-              <h3 class="blog-heading">${item.title}</h3>
-              <p class="publish-date">${item.year}</p>
-              <p class="blog-description">${item.description}</p>
-            </a>
-          </div>
-        `
-      )}
-    </div>
-  `;
-
-  render(template, el);
+              <h3 class="media-title">${item.title}</h3>
+              <p class="media-description">${item.description}</p>
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-link">
+                Read article
+              </a>
+            </article>
+          `
+        )}
+      </div>
+    `,
+    el
+  );
 }
 
-function populateInterests(items, id) {
+function experienceEntryTemplate(item) {
+  return html`
+    <article class="record-item animate-box" data-animate-effect="fadeInUp">
+      <div class="record-mark">
+        <span class="record-icon" aria-hidden="true">
+          <i class="fa fa-${item.icon || "briefcase"}"></i>
+        </span>
+      </div>
+      <div class="record-copy">
+        <div class="record-head">
+          <div>
+            <h3 class="record-title">${item.title}</h3>
+            <p class="record-subtitle">${item.subtitle}</p>
+          </div>
+          <span class="record-duration">${item.duration}</span>
+        </div>
+        ${detailListTemplate(item.details)}
+      </div>
+    </article>
+  `;
+}
+
+function populateExperience(items, id) {
   const el = document.getElementById(id);
   if (!el || !items?.length) {
     return;
   }
 
-  const template = html`
-    ${sectionHeaderTemplate(
-      {
-        eyebrow: "Beyond Work",
-        title: "Personal interests that reinforce the way I think",
-        subtitle:
-          "These stay at the end of the site so the faculty-market narrative remains clear, but they still matter for how I read strategy, narrative, and performance.",
-      },
-      "large"
-    )}
-    <div class="interest-grid">
-      ${items.map(
-        (item) => html`
-          <div class="interest-card animate-box" data-animate-effect="fadeInUp">
-            ${item.icon ? html`<i class="interest-icon ${item.icon}"></i>` : null}
-            <h3 class="interest-title">${item.title}</h3>
-            <p class="interest-text">${item.description}</p>
-          </div>
-        `
-      )}
-    </div>
-  `;
-
-  render(template, el);
+  render(
+    html`
+      ${sectionHeaderTemplate({
+        icon: "briefcase",
+        title: "Non-Academic Experience",
+        subtitle: "Industry roles that inform my research questions and classroom examples.",
+      })}
+      <div class="record-list">
+        ${items.map((item) => experienceEntryTemplate(item))}
+      </div>
+    `,
+    el
+  );
 }
 
 function populateSidebarLinks(items, id) {
@@ -800,58 +483,32 @@ function populateSidebarLinks(items, id) {
     return;
   }
 
-  const template = html`
-    ${items.map(
-      (item) => html`
-        <li>
-          <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-            ${item.iconUrl
-              ? html`<img class="contact-icon-img" src="${item.iconUrl}" alt="${item.label} icon" />`
-              : html`<i class="${item.icon}"></i>`}
-            <span>${item.label}</span>
-          </a>
-        </li>
-      `
-    )}
-  `;
-
-  render(template, el);
+  render(
+    html`
+      ${items.map(
+        (item) => html`
+          <li>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+              ${item.iconUrl
+                ? html`<img class="contact-icon-img" src="${item.iconUrl}" alt="${item.label} icon" />`
+                : html`<i class="${item.icon}"></i>`}
+              <span>${item.label}</span>
+            </a>
+          </li>
+        `
+      )}
+    `,
+    el
+  );
 }
-
-const teachingSection = experienceSections.find((section) => section.id === "teaching");
-const industrySection = experienceSections.find((section) => section.id === "industry");
-const affiliationSection = experienceSections.find((section) => section.id === "affiliation");
 
 setSidebar();
 populateSidebarActions(sidebar.actions, "sidebar-actions");
-populateHero(hero, bio, "hero");
 populateCollabCta(collabCta, "collab-cta");
-populateResearchPillars(researchPillars, "research-pillars");
-populateIndustryToResearch(industryToResearch, "industry-to-research");
-populateDistinctiveApproach(distinctiveApproach, "distinctive-approach");
-populateFeaturedWork(featuredWork, "featured-work");
-populateTimelineSections(researchSections, "research-details", {
-  eyebrow: "Research record",
-  title: "Publications, working papers, presentations, and work in progress",
-  subtitle:
-    "Detailed research entries remain available below the thematic overview so the site reads as both narrative portfolio and academic record.",
-});
-populateTeachingPhilosophy(teachingPhilosophy, "teaching-philosophy");
-populateTimelineSections(teachingSection ? [teachingSection] : [], "teaching-experience", {
-  eyebrow: "Teaching record",
-  title: "Formal teaching experience",
-  subtitle: "Course design and instruction experience that complements the teaching philosophy above.",
-});
-populateExperienceIntro(experienceIntro, "experience-summary");
-populateTimelineSections(industrySection ? [industrySection] : [], "experience", {
-  eyebrow: "Professional record",
-  title: "Applied leadership and decision work",
-  subtitle: "Professional experience is retained here as context for the research and teaching agenda.",
-});
-populateTimelineSections([{ label: "Education", items: education }], "education");
-populateTimelineSections(affiliationSection ? [affiliationSection] : [], "affiliations");
+populateAbout(hero, bio, "hero");
+populateEducation(education, "education");
+populateFeaturedPublications(featuredPublications, "featured-publications");
 populateMedia(media, "media");
-populateInterests(interests, "interests");
+populateExperience(professionalExperience, "experience");
 populateSidebarLinks(contactLinks, "sidebar-links");
-fetchReposFromGit(gitRepo);
 setupCollabModal(collabCta);
