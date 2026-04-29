@@ -12,9 +12,9 @@ export const sidebar = {
   researchGate: "https://www.researchgate.net/profile/Garros-Gong?ev=hdr_xprf",
   cv: "Garros_CV.pdf",
   actions: [
-    { label: "Curriculum Vitae", link: "Garros_CV.pdf", primary: true },
+    { label: "CV", link: "Garros_CV.pdf", primary: true },
     {
-      label: "Google Scholar",
+      label: "Scholar",
       link: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
       primary: false,
     },
@@ -27,39 +27,58 @@ export const sidebar = {
 };
 
 export const bio = [
-  "I study how organizations and markets adapt when decisions must be made before uncertainty clears.",
-  "My research connects public operations, trade and policy turbulence, and AI-enabled decision support through a common question: how signals, constraints, and incentives shape adaptation under uncertainty.",
-  "Substantial finance-sector and AI transformation experience informs the problems I study, the mechanisms I look for, and the way I teach judgment under real constraints.",
+  "I study how organizations and markets adapt before uncertainty clears.",
+  "My work connects public operations, trade and policy turbulence, and AI-enabled decision support.",
 ];
 
 export const hero = {
-  eyebrow: "Who I Am",
-  title: "PhD researcher in Management Science studying decisions under uncertainty.",
+  eyebrow: "Management Science",
+  title: "Decisions under uncertainty in operations, markets, and AI.",
   subtitle:
-    "A scholar-practitioner approach to operations, markets, and AI-enabled decision support.",
+    "Scholar-practitioner research on signals, constraints, and adaptation.",
   quickFacts: [
     {
-      label: "Research home",
-      value: "Management Sciences, University of Waterloo",
+      icon: "university",
+      label: "Home",
+      value: "Waterloo",
     },
     {
-      label: "Research lens",
-      value: "Consequential decisions under noisy information and real trade-offs",
+      icon: "briefcase",
+      label: "Background",
+      value: "Finance + AI leadership",
     },
     {
-      label: "Teaching frame",
-      value: "Models as tools for judgment rather than substitutes for judgment",
+      icon: "graduation-cap",
+      label: "Teaching",
+      value: "Judgment under constraints",
     },
   ],
-  statement:
-    "My work begins from the same premise in research and teaching: analytical tools matter most when they help people make better decisions under real constraints.",
+  researchCards: [
+    { icon: "leaf", title: "Sustainable operations" },
+    { icon: "exchange", title: "Trade and policy" },
+    { icon: "lightbulb-o", title: "AI decision support" },
+  ],
+  logos: [
+    {
+      src: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
+      label: "Waterloo",
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Logo-ivey.png",
+      label: "Ivey",
+    },
+    {
+      src: "https://www.uvic.ca/brand/_assets/images/cards/cards/uvic-crest.webp",
+      label: "UVic",
+    },
+  ],
+  statement: "Research, teaching, and practice meet around deployable decision support.",
 };
 
 export const collabCta = {
-  title:
-    "Open to faculty conversations, academic collaboration, and selected applied engagements",
+  title: "Open to faculty conversations and academic collaboration",
   body:
-    "I am actively exploring faculty-market opportunities, research collaborations, and affiliated scholarly work in operations management, applied economics, and AI-enabled decision support. I also remain open to a limited set of applied projects when they align with public-sector, policy, or decision-system questions.",
+    "Faculty-market, collaboration, and affiliated research conversations are welcome.",
   academicEmail: "g7gong@uwaterloo.ca",
   personalEmail: "kuyigougou@gmail.com",
   academicLabel: "Start an academic conversation",
@@ -77,95 +96,85 @@ export const researchInterests = [
 ];
 
 export const researchPillars = {
-  eyebrow: "What I Study",
-  title: "A research program on how organizations and markets adapt under uncertainty.",
-  subtitle:
-    "The settings differ, but the underlying question is consistent: how signals, constraints, and incentives shape adaptation when decision quality matters.",
-  drivers: ["signals", "constraints", "incentives", "decision quality"],
-  centerTitle: "Organizations and markets adapting under uncertainty",
+  eyebrow: "Research Agenda",
+  title: "Three linked themes",
+  subtitle: "Different settings, one core question: adaptation under uncertainty.",
   pillars: [
     {
       icon: "leaf",
-      title: "Sustainable operations management",
-      description:
-        "Public systems, climate-linked operations, and emergency response environments.",
+      title: "Sustainable operations",
+      description: "Public systems, climate-linked operations, emergency response.",
     },
     {
       icon: "exchange",
-      title: "Core OM under trade and policy turbulence",
-      description:
-        "Supply chain adaptation, market adjustment, and resource reallocation under shocks.",
+      title: "Trade and policy",
+      description: "Market adjustment, supply chain response, resource reallocation.",
     },
     {
       icon: "lightbulb-o",
-      title: "AI-enabled decision support",
-      description:
-        "Text signals, digital measurement, and uncertainty-sensitive decision systems.",
+      title: "AI decision support",
+      description: "Text signals, digital measurement, interpretable support systems.",
     },
   ],
 };
 
 export const industryToResearch = {
-  eyebrow: "From Industry to Research",
-  title:
-    "How practical decision environments shaped my research questions and teaching philosophy",
-  subtitle:
-    "High-stakes finance and strategy work pushed me toward questions where uncertainty is active, information is incomplete, and allocation trade-offs are real.",
+  eyebrow: "Path",
+  title: "Industry -> Research",
+  subtitle: "Practical decision environments shaped the questions I now study.",
   industry: {
-    title: "Industry decision environments",
+    title: "Industry",
     description:
-      "Capital allocation, profitability, risk, incentives, and positioning all had to be handled before uncertainty cleared.",
-    tags: ["cost", "speed", "risk", "incentives", "positioning"],
+      "Capital allocation, profitability, risk, and incentives under incomplete information.",
+    tags: ["cost", "speed", "risk"],
   },
   pivot: {
-    title: "How it changed my thinking",
+    title: "Research lens",
     statement: "Act before uncertainty clears",
     steps: ["signals", "constraints", "adaptation"],
-    detail: "Questions about resource allocation under incomplete and noisy information",
+    detail: "Resource allocation under noisy information",
   },
   outcomes: [
     {
       label: "Research",
       title: "Consequential decisions",
-      description: "Noisy information, real trade-offs, and measurable operational response",
+      description: "Noisy signals, real trade-offs",
     },
     {
       label: "Teaching",
-      title: "Models as tools for judgment",
-      description: "Assumptions, limits, and breakdown points matter as much as technique",
+      title: "Judgment with models",
+      description: "Assumptions and limits still matter",
     },
   ],
-  footer:
-    "Research and teaching begin from the same premise: analysis matters most when it improves judgment under real constraints.",
+  footer: "Analysis matters most when it improves judgment under real constraints.",
 };
 
 export const distinctiveApproach = {
-  eyebrow: "What Makes My Work Distinct",
-  title: "A problem-first approach to OM, markets, and AI-enabled decision support",
-  subtitle:
-    "I am less interested in models as isolated technical artifacts than in whether they travel into difficult decision environments.",
+  eyebrow: "Approach",
+  title: "What makes the work distinct",
+  subtitle: "Problem-first, mechanism-driven, deployable.",
   rows: [
     {
       number: "1",
-      title: "From technical prediction to operational response",
-      leftLabel: "Prediction tools",
-      rightLabel: "Deployable decision support",
+      title: "Prediction -> response",
+      leftLabel: "Prediction",
+      rightLabel: "Decision support",
       leftIcon: "line-chart",
       rightIcon: "desktop",
     },
     {
       number: "2",
-      title: "From clean signals to noisy real-world information",
+      title: "Clean data -> noisy reality",
       leftLabel: "Structured inputs",
-      rightLabel: "Public, digital, and imperfect signals",
+      rightLabel: "Public digital signals",
       leftIcon: "sliders",
       rightIcon: "comments-o",
     },
     {
       number: "3",
-      title: "From narrow settings to portable mechanisms",
-      leftLabel: "Setting-specific problems",
-      rightLabel: "General OM questions about adaptation and allocation",
+      title: "Narrow setting -> portable mechanism",
+      leftLabel: "Setting-specific",
+      rightLabel: "Portable mechanism",
       leftIcon: "map-marker",
       rightIcon: "cogs",
     },
@@ -174,42 +183,38 @@ export const distinctiveApproach = {
 };
 
 export const featuredWork = {
-  eyebrow: "Selected Work and Forward Direction",
-  title: "From current research to a broader scholar-practitioner trajectory",
-  subtitle:
-    "Three active themes anchor the current portfolio, while the forward direction expands toward governance, infrastructure, and practical measurement systems.",
+  eyebrow: "Selected Work",
+  title: "Current work",
+  subtitle: "Core projects plus one forward direction.",
   cards: [
     {
+      icon: "fire",
       title: "Public visibility and operational response",
-      description:
-        "How social media visibility reshapes mobilization and cost efficiency in wildfire response.",
+      description: "Wildfire response, visibility, and cost.",
     },
     {
+      icon: "globe",
       title: "Trade and policy turbulence",
-      description:
-        "How firms and markets adjust across channels when incentives shift under policy shocks.",
+      description: "How firms and markets adjust under shocks.",
     },
     {
+      icon: "comments-o",
       title: "AI-enabled decision support",
-      description:
-        "How text signals and digital measurement improve decisions under noisy uncertainty.",
+      description: "Text signals and interpretable support systems.",
     },
   ],
   forwardDirection: {
     title: "Forward direction",
     items: [
       {
-        title: "Infrastructure and climate-linked adaptation",
-        description: "Operational resilience questions in public and climate-exposed systems.",
+        icon: "road",
+        title: "Infrastructure and climate adaptation",
+        description: "Operational resilience in public and climate-exposed systems.",
       },
       {
-        title: "Governance networks and AI adoption",
-        description: "How institutions adopt, constrain, and coordinate AI-enabled decisions.",
-      },
-      {
-        title: "Practical measurement systems for uncertain decisions",
-        description:
-          "Interpretability, evidence linkage, and decision value in long-horizon settings.",
+        icon: "sitemap",
+        title: "Governance and AI adoption",
+        description: "How institutions adopt and constrain AI-enabled decisions.",
       },
     ],
   },
@@ -224,20 +229,12 @@ export const featuredWork = {
 };
 
 export const teachingPhilosophy = {
-  eyebrow: "How I Teach",
-  title: "In the AI era, judgment matters more, not less",
+  eyebrow: "Teaching",
+  title: "In the AI era, judgment matters more",
   subtitle:
-    "The easier analysis becomes, the more valuable it is for students to understand assumptions, evidence, and how to decide under real constraints.",
-  aiCanHelp: [
-    "Generate analysis",
-    "Scale information processing",
-    "Accelerate technical execution",
-  ],
-  studentsMustLearn: [
-    "Judge assumptions",
-    "Interpret evidence",
-    "Make decisions under real constraints",
-  ],
+    "Students still need to judge assumptions, interpret evidence, and decide under constraints.",
+  aiCanHelp: ["Generate analysis", "Scale information", "Accelerate execution"],
+  studentsMustLearn: ["Judge assumptions", "Interpret evidence", "Decide under constraints"],
   structure: ["Real problem context", "Model structure", "Where it breaks", "How to decide"],
   outcomes: ["Technical competence", "Better judgment", "Clearer thinking under uncertainty"],
   courses: [
@@ -250,11 +247,10 @@ export const teachingPhilosophy = {
 };
 
 export const experienceIntro = {
-  eyebrow: "Prior Industry and Applied Leadership",
-  title: "Industry experience remains on the site as context, not as the lead story.",
+  eyebrow: "Experience",
+  title: "Industry background as context",
   body: [
-    "The throughline is not simply sector experience. It is repeated exposure to consequential allocation problems under incomplete information.",
-    "That experience informs the kinds of research questions I pursue, the empirical settings I choose, and the emphasis on deployable judgment in the classroom.",
+    "Industry work informs the questions I study and the way I teach deployable judgment.",
   ],
 };
 

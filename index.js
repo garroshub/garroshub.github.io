@@ -4,7 +4,6 @@ import {
   bio,
   hero,
   collabCta,
-  researchInterests,
   researchPillars,
   industryToResearch,
   distinctiveApproach,
@@ -49,10 +48,6 @@ function buildMailto(email, subject, body) {
   const encodedSubject = encodeURIComponent(subject || "");
   const encodedBody = encodeURIComponent(body || "");
   return `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
-}
-
-function isExternalLink(link) {
-  return /^https?:\/\//.test(link || "");
 }
 
 function setSidebar() {
@@ -109,7 +104,7 @@ function populateSidebarActions(items, id) {
   render(template, el);
 }
 
-function populateHero(data, paragraphs, focusItems, id) {
+function populateHero(data, paragraphs, id) {
   const el = document.getElementById(id);
   if (!el || !data) {
     return;
@@ -120,7 +115,27 @@ function populateHero(data, paragraphs, focusItems, id) {
     <div class="hero-grid">
       <div class="paper-panel hero-copy animate-box" data-animate-effect="fadeInLeft">
         ${paragraphs.map((line) => html`<p class="hero-paragraph">${line}</p>`)}
+        <div class="hero-topic-grid">
+          ${data.researchCards.map(
+            (item) => html`
+              <div class="hero-topic-card">
+                <i class="fa fa-${item.icon}"></i>
+                <span>${item.title}</span>
+              </div>
+            `
+          )}
+        </div>
         <div class="identity-ribbon">${data.statement}</div>
+        <div class="hero-logo-strip">
+          ${data.logos.map(
+            (item) => html`
+              <div class="hero-logo-card">
+                <img src="${item.src}" alt="${item.label} logo" />
+                <span>${item.label}</span>
+              </div>
+            `
+          )}
+        </div>
       </div>
       <div class="hero-side">
         <div class="paper-panel hero-facts animate-box" data-animate-effect="fadeInRight">
@@ -128,22 +143,19 @@ function populateHero(data, paragraphs, focusItems, id) {
           ${data.quickFacts.map(
             (item) => html`
               <div class="fact-item">
-                <span class="fact-label">${item.label}</span>
-                <p class="fact-value">${item.value}</p>
+                <div class="fact-icon"><i class="fa fa-${item.icon}"></i></div>
+                <div>
+                  <span class="fact-label">${item.label}</span>
+                  <p class="fact-value">${item.value}</p>
+                </div>
               </div>
             `
           )}
         </div>
         <div class="paper-panel hero-focus animate-box" data-animate-effect="fadeInRight">
-          <p class="mini-label">Research Focus</p>
+          <p class="mini-label">Core Focus</p>
           <div class="hero-focus-grid">
-            ${focusItems.map(
-              (item) => html`
-                <div class="hero-focus-card">
-                  <span>${item}</span>
-                </div>
-              `
-            )}
+            ${paragraphs.map((line) => html`<div class="hero-focus-card"><span>${line}</span></div>`)}
           </div>
         </div>
       </div>
@@ -306,12 +318,6 @@ function populateResearchPillars(data, id) {
   const template = html`
     ${sectionHeaderTemplate(data)}
     <div class="paper-panel agenda-panel animate-box" data-animate-effect="fadeInUp">
-      <div class="driver-row">
-        ${data.drivers.map((driver) => html`<span class="driver-chip">${driver}</span>`)}
-      </div>
-      <div class="agenda-center-wrap">
-        <div class="agenda-center">${data.centerTitle}</div>
-      </div>
       <div class="pillar-grid">
         ${data.pillars.map(
           (pillar) => html`
@@ -425,7 +431,7 @@ function populateFeaturedWork(data, id) {
       ${data.cards.map(
         (card) => html`
           <div class="featured-card animate-box" data-animate-effect="fadeInUp">
-            <div class="featured-accent"></div>
+            <div class="featured-icon"><i class="fa fa-${card.icon}"></i></div>
             <h3>${card.title}</h3>
             <p>${card.description}</p>
           </div>
@@ -439,6 +445,7 @@ function populateFeaturedWork(data, id) {
           ${data.forwardDirection.items.map(
             (item) => html`
               <div class="forward-card">
+                <div class="forward-icon"><i class="fa fa-${item.icon}"></i></div>
                 <h3>${item.title}</h3>
                 <p>${item.description}</p>
               </div>
@@ -817,7 +824,7 @@ const affiliationSection = experienceSections.find((section) => section.id === "
 
 setSidebar();
 populateSidebarActions(sidebar.actions, "sidebar-actions");
-populateHero(hero, bio, researchInterests, "hero");
+populateHero(hero, bio, "hero");
 populateCollabCta(collabCta, "collab-cta");
 populateResearchPillars(researchPillars, "research-pillars");
 populateIndustryToResearch(industryToResearch, "industry-to-research");
