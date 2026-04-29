@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Garros Gong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Academic portfolio of Garros Gong" />
-    <meta name="keywords" content="portfolio, research, decision science" />
+    <meta
+      name="description"
+      content="Faculty-market academic homepage for Garros Gong, a Management Science researcher studying decisions under uncertainty."
+    />
+    <meta
+      name="keywords"
+      content="Management Science, operations management, applied economics, decision support, academic homepage"
+    />
     <meta name="author" content="Garros Gong" />
 
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -24,11 +30,6 @@
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/vinaysomawat/vinaysomawat.github.io@master/css/style.css"
     />
     <link rel="stylesheet" href="css/style.css" />
     <script type="module" src="index.js"></script>
@@ -45,169 +46,123 @@
           aria-controls="navbar"
           ><i></i
         ></a>
+
         <aside
           id="colorlib-aside"
           role="complementary"
           class="border js-fullheight no-print"
         >
-          <div class="text-center">
+          <div class="sidebar-shell">
             <div class="author-img">
               <img id="profile-img" src="garros.jpg" alt="Garros Gong" />
             </div>
-            <h1 id="colorlib-logo"><a href="./index.html" id="sidebar-name">Garros Gong</a></h1>
-            <span class="position" id="sidebar-title"
-              >Decision Scientist | Quantitative Strategist | Applied Economist</span
-            >
-            <span class="position" id="sidebar-meta">Toronto, ON, Canada</span>
-          </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
-          >
-            <div id="navbar" class="collapse">
-              <ul>
-                <li class="active"><a href="#" data-nav-section="about">About Me</a></li>
-                <li><a href="#" data-nav-section="experience">Work Experience</a></li>
-                <li><a href="#" data-nav-section="research">Academic Research</a></li>
-                <li><a href="#" data-nav-section="education">Education</a></li>
-                <li><a href="#" data-nav-section="projects">Sample Projects</a></li>
-                <li><a href="#" data-nav-section="media">Media Influence</a></li>
-                <li><a href="#" data-nav-section="interests">Personal Interests</a></li>
-              </ul>
+
+            <div class="sidebar-copy">
+              <h1 id="colorlib-logo">
+                <a href="./index.html" id="sidebar-name">Garros Gong</a>
+              </h1>
+              <span class="position" id="sidebar-title"
+                >PhD Researcher in Management Science</span
+              >
+              <span class="position" id="sidebar-meta"
+                >University of Waterloo | Toronto, ON, Canada</span
+              >
+              <p id="sidebar-tagline" class="sidebar-tagline">
+                Operations, markets, and AI-enabled decision support.
+              </p>
             </div>
-          </nav>
-          <div class="colorlib-footer">
-            <ul id="sidebar-links"></ul>
+
+            <div id="sidebar-actions" class="sidebar-actions"></div>
+
+            <nav id="colorlib-main-menu" role="navigation" class="navbar">
+              <div id="navbar" class="collapse">
+                <ul>
+                  <li class="active"><a href="#" data-nav-section="about">Overview</a></li>
+                  <li><a href="#" data-nav-section="agenda">Research Agenda</a></li>
+                  <li>
+                    <a href="#" data-nav-section="journey">Industry to Research</a>
+                  </li>
+                  <li>
+                    <a href="#" data-nav-section="distinct">Distinctive Approach</a>
+                  </li>
+                  <li><a href="#" data-nav-section="selected">Selected Work</a></li>
+                  <li><a href="#" data-nav-section="teaching">Teaching</a></li>
+                  <li><a href="#" data-nav-section="experience">Experience</a></li>
+                  <li><a href="#" data-nav-section="media">Media</a></li>
+                  <li><a href="#" data-nav-section="interests">Personal</a></li>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="colorlib-footer">
+              <div class="footer-label">Connect</div>
+              <ul id="sidebar-links"></ul>
+            </div>
           </div>
         </aside>
-        <div id="colorlib-main">
-          <section class="colorlib-about" data-section="about">
-            <div class="colorlib-narrow-content">
-              <div class="row animate-box" data-animate-effect="fadeInLeft">
-                <div class="about-desc">
-                  <h1>About Me</h1>
-                  <div id="collab-cta"></div>
-                  <div id="bio"></div>
-                  <div class="research-interests-row">
-                    <span class="profile-badge interest-label-badge">Research Interests</span>
-                    <div id="research-interests" class="tags-container"></div>
-                  </div>
-                </div>
-              </div>
+
+        <main id="colorlib-main">
+          <section class="page-section hero-section" data-section="about">
+            <div class="section-shell">
+              <div id="hero"></div>
+              <div id="collab-cta"></div>
             </div>
           </section>
 
-          <section class="colorlib-experience" data-section="experience">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Work Experience</h1>
-                </div>
-              </div>
+          <section class="page-section" data-section="agenda">
+            <div class="section-shell">
+              <div id="research-pillars"></div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section="journey">
+            <div class="section-shell">
+              <div id="industry-to-research"></div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section="distinct">
+            <div class="section-shell">
+              <div id="distinctive-approach"></div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section="selected">
+            <div class="section-shell">
+              <div id="featured-work"></div>
+              <div id="research-details"></div>
+              <div id="repos"></div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section="teaching">
+            <div class="section-shell">
+              <div id="teaching-philosophy"></div>
+              <div id="teaching-experience"></div>
+            </div>
+          </section>
+
+          <section class="page-section" data-section="experience">
+            <div class="section-shell">
+              <div id="experience-summary"></div>
               <div id="experience"></div>
-            </div>
-          </section>
-
-          <section class="colorlib-experience" data-section="research">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Academic Research</h1>
-                </div>
-              </div>
-              <div id="research"></div>
-            </div>
-          </section>
-
-          <section class="colorlib-education" data-section="education">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-              </div>
               <div id="education"></div>
+              <div id="affiliations"></div>
             </div>
           </section>
 
-          <section class="colorlib-experience no-print" data-section="projects">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Sample Projects</h1>
-                </div>
-              </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li class="open">
-                  <ul
-                    id="repos"
-                    class=""
-                    style="display: block; padding: 0px"
-                  ></ul>
-                </li>
-              </ul>
+          <section class="page-section" data-section="media">
+            <div class="section-shell">
+              <div id="media"></div>
             </div>
           </section>
 
-          <section class="colorlib-blogs no-print" data-section="media">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Media Influence</h1>
-                </div>
-              </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li class="open">
-                  <ul
-                    id="media"
-                    class="submenu"
-                    style="display: flex; flex-direction: column; gap: 20px"
-                  ></ul>
-                </li>
-              </ul>
+          <section class="page-section page-section-last" data-section="interests">
+            <div class="section-shell">
+              <div id="interests"></div>
             </div>
           </section>
-
-          <section class="colorlib-skills" data-section="interests">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Personal Interests</h1>
-                </div>
-              </div>
-              <div id="interests" class="row"></div>
-            </div>
-          </section>
-
-        </div>
+        </main>
       </div>
     </div>
 
@@ -217,8 +172,18 @@
 
     <div id="collab-modal" class="collab-modal" aria-hidden="true">
       <div class="collab-modal-overlay" data-modal-close></div>
-      <div class="collab-modal-content" role="dialog" aria-modal="true" aria-labelledby="collab-modal-title">
-        <button type="button" class="collab-modal-close" aria-label="Close" data-modal-close>
+      <div
+        class="collab-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="collab-modal-title"
+      >
+        <button
+          type="button"
+          class="collab-modal-close"
+          aria-label="Close"
+          data-modal-close
+        >
           &times;
         </button>
         <h3 id="collab-modal-title">Leave a message</h3>
