@@ -327,6 +327,31 @@ function populateEducation(items, id) {
   );
 }
 
+function publishedPreviewCardTemplate(item) {
+  return html`
+    <article class="publication-preview publication-preview-${item.theme || "default"} animate-box" data-animate-effect="fadeInUp">
+      <div class="publication-preview-art">
+        <div class="publication-journal-chip">
+          ${item.imageSrc
+            ? html`<img src="${item.imageSrc}" alt="${item.imageAlt || item.venue}" class="publication-journal-image" />`
+            : null}
+          <div>
+            <span class="publication-preview-label">${item.label}</span>
+            <p class="publication-preview-venue">${item.venue}</p>
+          </div>
+        </div>
+      </div>
+      <div class="publication-preview-body">
+        <h3 class="publication-preview-title">${item.title}</h3>
+        <p class="publication-preview-summary">${item.summary}</p>
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="publication-preview-button">
+          ${item.linkLabel || "Read article"}
+        </a>
+      </div>
+    </article>
+  `;
+}
+
 function researchItemTemplate(item) {
   return html`
     <article class="research-item animate-box" data-animate-effect="fadeInUp">
@@ -335,7 +360,7 @@ function researchItemTemplate(item) {
           <i class="fa fa-${item.icon}"></i>
         </span>
         <span class="research-label">${item.label}</span>
-        <span class="research-venue">${item.venue}</span>
+        ${item.venue ? html`<span class="research-venue">${item.venue}</span>` : null}
       </div>
       <h3 class="research-title">${item.title}</h3>
       <p class="research-summary">${item.summary}</p>
@@ -364,9 +389,17 @@ function populateResearchSection(data, id) {
           (group) => html`
             <div class="research-group">
               <h3 class="research-group-title">${group.title}</h3>
-              <div class="research-list">
-                ${group.items.map((item) => researchItemTemplate(item))}
-              </div>
+              ${group.layout === "preview"
+                ? html`
+                    <div class="publication-preview-grid">
+                      ${group.items.map((item) => publishedPreviewCardTemplate(item))}
+                    </div>
+                  `
+                : html`
+                    <div class="research-list">
+                      ${group.items.map((item) => researchItemTemplate(item))}
+                    </div>
+                  `}
             </div>
           `
         )}
@@ -425,14 +458,18 @@ function populateMedia(items, id) {
   );
 }
 
-function experienceEntryTemplate(item) {
+function experienceEntryTemplate(item, options = {}) {
   return html`
-    <article class="record-item animate-box" data-animate-effect="fadeInUp">
-      <div class="record-mark">
-        <span class="record-icon" aria-hidden="true">
-          <i class="fa fa-${item.icon || "briefcase"}"></i>
-        </span>
-      </div>
+    <article class="record-item ${options.showMarker === false ? "no-mark" : ""} animate-box" data-animate-effect="fadeInUp">
+      ${options.showMarker === false
+        ? null
+        : html`
+            <div class="record-mark">
+              <span class="record-icon" aria-hidden="true">
+                <i class="fa fa-${item.icon || "briefcase"}"></i>
+              </span>
+            </div>
+          `}
       <div class="record-copy">
         <div class="record-head">
           <div>
@@ -461,7 +498,7 @@ function populateExperience(items, id) {
         subtitle: "Industry experience that informs my research questions and applied perspective.",
       })}
       <div class="record-list">
-        ${items.map((item) => experienceEntryTemplate(item))}
+        ${items.map((item) => experienceEntryTemplate(item, { showMarker: false }))}
       </div>
     `,
     el

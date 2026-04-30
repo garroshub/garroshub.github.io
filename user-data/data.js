@@ -90,26 +90,35 @@ export const researchSection = {
   groups: [
     {
       title: "Peer-Reviewed Publications",
+      layout: "preview",
       items: [
         {
           icon: "fire",
           label: "Published",
           venue: "Production and Operations Management (2026)",
+          imageSrc: "https://www.google.com/s2/favicons?domain=journals.sagepub.com&sz=128",
+          imageAlt: "Production and Operations Management",
+          theme: "pom",
           title:
             "Sustainable Wildfire Management Meets Social Media: How Virtual Interaction Affects Wildfire Response Costs.",
           summary:
             "Introduces the Visibility Efficiency Paradox: social media visibility can accelerate dispatch intensity while weakening cost efficiency once resource use approaches saturation.",
+          link: "https://journals.sagepub.com/doi/10.1177/10591478261445692",
+          linkLabel: "Read article",
         },
         {
           icon: "globe",
           label: "Published",
           venue: "Discover Sustainability (2024)",
+          imageSrc: "https://www.google.com/s2/favicons?domain=link.springer.com&sz=128",
+          imageAlt: "Discover Sustainability",
+          theme: "springer",
           title:
             "Digital strategies in wildfire management: Social media analytics and Web 3.0 integration.",
           summary:
             "Develops a wildfire decision-support framework using social media analytics for monitoring, prediction, and response.",
-          link: "https://doi.org/10.1007/s43621-024-00274-7",
-          linkLabel: "View publication",
+          link: "https://link.springer.com/article/10.1007/s43621-024-00274-7",
+          linkLabel: "Read article",
         },
       ],
     },
@@ -119,7 +128,6 @@ export const researchSection = {
         {
           icon: "money",
           label: "Under Peer Review",
-          venue: "Journal of Environmental Management",
           title:
             "When Do Budgetary Shocks Backfire? Temporal Decoupling of Fiscal Signals under Climate Risk.",
           summary:
@@ -128,7 +136,6 @@ export const researchSection = {
         {
           icon: "exchange",
           label: "Under Peer Review",
-          venue: "Journal of Operations Management",
           title:
             "Trade-Tax Substitution and Fiscal Space: Regime-Dependent Evidence and a Policy Mapping.",
           summary:
@@ -137,7 +144,6 @@ export const researchSection = {
         {
           icon: "line-chart",
           label: "Under Peer Review",
-          venue: "Management Science",
           title:
             "Cross-Channel Market Adjustment under a Dividend Tax Shock: Heterogeneous Responses and Coordination Frictions.",
           summary:
@@ -146,7 +152,6 @@ export const researchSection = {
         {
           icon: "comments-o",
           label: "Under Peer Review",
-          venue: "Decision Support Systems",
           title:
             "Beyond Prices: AI-Extracted Text Signals and Tail-Risk Calibration in Polymarket.",
           summary:
