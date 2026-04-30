@@ -5,7 +5,7 @@ import {
   hero,
   collabCta,
   education,
-  featuredPublications,
+  researchSection,
   media,
   professionalExperience,
   contactLinks,
@@ -263,24 +263,6 @@ function populateAbout(data, paragraphs, id) {
           `
         )}
       </div>
-      ${data.teachingNote
-        ? html`
-            <p class="about-note animate-box" data-animate-effect="fadeInUp">
-              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-              <span>${data.teachingNote}</span>
-            </p>
-          `
-        : null}
-      <div class="logo-row animate-box" data-animate-effect="fadeInUp">
-        ${data.logos.map(
-          (item) => html`
-            <div class="logo-pill">
-              <img src="${item.src}" alt="${item.label} logo" />
-              <span>${item.label}</span>
-            </div>
-          `
-        )}
-      </div>
     `,
     el
   );
@@ -345,18 +327,18 @@ function populateEducation(items, id) {
   );
 }
 
-function publicationCardTemplate(item) {
+function researchItemTemplate(item) {
   return html`
-    <article class="publication-card animate-box" data-animate-effect="fadeInUp">
-      <div class="publication-top">
+    <article class="research-item animate-box" data-animate-effect="fadeInUp">
+      <div class="research-top">
         <span class="pill-icon small" aria-hidden="true">
           <i class="fa fa-${item.icon}"></i>
         </span>
-        <span class="publication-status">${item.status}</span>
+        <span class="research-label">${item.label}</span>
+        <span class="research-venue">${item.venue}</span>
       </div>
-      <h3 class="publication-title">${item.title}</h3>
-      <p class="publication-venue">${item.venue}</p>
-      <p class="publication-summary">${item.summary}</p>
+      <h3 class="research-title">${item.title}</h3>
+      <p class="research-summary">${item.summary}</p>
       ${item.link
         ? html`
             <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-link">
@@ -368,17 +350,26 @@ function publicationCardTemplate(item) {
   `;
 }
 
-function populateFeaturedPublications(data, id) {
+function populateResearchSection(data, id) {
   const el = document.getElementById(id);
-  if (!el || !data?.items?.length) {
+  if (!el || !data?.groups?.length) {
     return;
   }
 
   render(
     html`
       ${sectionHeaderTemplate(data)}
-      <div class="publication-grid">
-        ${data.items.map((item) => publicationCardTemplate(item))}
+      <div class="research-groups">
+        ${data.groups.map(
+          (group) => html`
+            <div class="research-group">
+              <h3 class="research-group-title">${group.title}</h3>
+              <div class="research-list">
+                ${group.items.map((item) => researchItemTemplate(item))}
+              </div>
+            </div>
+          `
+        )}
       </div>
     `,
     el
@@ -466,8 +457,8 @@ function populateExperience(items, id) {
     html`
       ${sectionHeaderTemplate({
         icon: "briefcase",
-        title: "Non-Academic Experience",
-        subtitle: "Industry roles that inform my research questions and classroom examples.",
+        title: "Professional Experience",
+        subtitle: "Industry experience that informs my research questions and applied perspective.",
       })}
       <div class="record-list">
         ${items.map((item) => experienceEntryTemplate(item))}
@@ -507,7 +498,7 @@ populateSidebarActions(sidebar.actions, "sidebar-actions");
 populateCollabCta(collabCta, "collab-cta");
 populateAbout(hero, bio, "hero");
 populateEducation(education, "education");
-populateFeaturedPublications(featuredPublications, "featured-publications");
+populateResearchSection(researchSection, "featured-publications");
 populateMedia(media, "media");
 populateExperience(professionalExperience, "experience");
 populateSidebarLinks(contactLinks, "sidebar-links");

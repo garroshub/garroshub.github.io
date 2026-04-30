@@ -1,17 +1,17 @@
 export const sidebar = {
   name: "Garros Gong, Ph.D.",
-  title: "PhD Researcher in Management Science",
+  title: "Early-Career Researcher",
   meta: "University of Waterloo | Toronto, ON, Canada",
-  tagline: "Research on operations, markets, and AI-enabled decision support.",
+  tagline: "Sustainable operations, organizational adaptation, and AI-enabled decision support.",
   image: "garros.jpg",
   email: "g7gong@uwaterloo.ca",
   linkedin: "https://www.linkedin.com/in/garros-gong/",
   github: "https://github.com/garroshub",
   scholar: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
   researchGate: "https://www.researchgate.net/profile/Garros-Gong?ev=hdr_xprf",
-  cv: "Garros_CV.pdf",
+  cv: "Garros_CV (3 Pages).pdf",
   actions: [
-    { label: "CV", link: "Garros_CV.pdf", primary: true },
+    { label: "CV", link: "Garros_CV (3 Pages).pdf", primary: true },
     {
       label: "Google Scholar",
       link: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
@@ -26,35 +26,20 @@ export const sidebar = {
 };
 
 export const bio = [
-  "I am a PhD researcher in Management Science at the University of Waterloo. I study how organizations and markets make consequential decisions before uncertainty clears.",
-  "My work spans wildfire operations, trade and policy turbulence, and AI-enabled decision support, drawing on prior experience in finance, investment strategy, and enterprise analytics.",
+  "I am a management science scholar whose research agenda begins in sustainable operations management and extends to how organizations and markets adapt under uncertainty.",
+  "Using economic modeling, empirical analysis, and causal inference, I study how information frictions, incentives, and institutional constraints shape resource allocation and decision quality across environmental systems, public budgeting, market adjustment, and AI-enabled decision support. My prior experience in the financial sector gives me a grounded perspective on the decisions and constraints I study.",
 ];
 
 export const hero = {
   icon: "user-o",
   title: "About Me",
   subtitle:
-    "PhD researcher in Management Science studying decisions under uncertainty.",
+    "Early-career researcher studying decisions under uncertainty across operations, markets, and AI.",
   researchAreas: [
-    { icon: "leaf", title: "Sustainable operations" },
-    { icon: "exchange", title: "Trade and policy" },
-    { icon: "lightbulb-o", title: "AI decision support" },
-  ],
-  teachingNote:
-    "I also teach analytics and management science with an emphasis on judgment, assumptions, and decision quality.",
-  logos: [
-    {
-      src: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
-      label: "Waterloo",
-    },
-    {
-      src: "https://upload.wikimedia.org/wikipedia/commons/8/89/Logo-ivey.png",
-      label: "Ivey",
-    },
-    {
-      src: "https://www.uvic.ca/brand/_assets/images/cards/cards/uvic-crest.webp",
-      label: "UVic",
-    },
+    { icon: "leaf", title: "Sustainable operations management" },
+    { icon: "random", title: "Organizational and market adaptation" },
+    { icon: "lightbulb-o", title: "AI-enabled decision support" },
+    { icon: "sitemap", title: "Decision science" },
   ],
 };
 
@@ -74,67 +59,100 @@ export const collabCta = {
 export const education = [
   {
     title: "University of Waterloo",
-    duration: "Expected Oct 2025",
-    subtitle: "Ph.D. in Management Sciences: Applied Operational Research",
+    duration: "Oct 2025",
+    subtitle: "Ph.D. in Management Sciences (OR)",
     logo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
     details: [
-      "Dissertation on data-driven decision-making under uncertainty in U.S. wildfire management.",
-      "INFORMS Telecommunications and Network Analytics Conference presenter.",
+      "Dissertation: Data-Driven Decision-Making Under Uncertainty: An Empirical Study of U.S. Wildfire Management.",
+      "Research Award: David Martell Student Paper Prize (2025).",
     ],
   },
   {
-    title: "Ivey Business School at Western University",
+    title: "Ivey Business School",
     duration: "May 2018",
-    subtitle: "M.Sc. in Management Sciences: Business Analytics Stream",
+    subtitle: "M.Sc. in Management Sciences",
     logo: "https://upload.wikimedia.org/wikipedia/commons/8/89/Logo-ivey.png",
-    details: [
-      "Richard Ivey MSc Excellence Award.",
-      "Deloitte Case Competition 2nd Place and PwC IFRS 9 Capital Advisory Project.",
-    ],
+    details: [],
   },
   {
     title: "University of Victoria",
     duration: "Jun 2016",
     subtitle: "B.S. in Financial Mathematics and Economics",
     logo: "https://www.uvic.ca/brand/_assets/images/cards/cards/uvic-crest.webp",
-    details: [
-      "Graduated with high distinction.",
-      "Jamie Cassels Undergraduate Research Award.",
-    ],
+    details: ["Research Award: Jamie Cassels Undergraduate Research Awards (2014)."],
   },
 ];
 
-export const featuredPublications = {
+export const researchSection = {
   icon: "book",
-  title: "Featured Publications",
-  subtitle:
-    "Selected papers across wildfire operations, public policy, and digital decision support.",
-  items: [
+  title: "Publications and Selected Research",
+  subtitle: "Peer-reviewed work and selected studies from the current CV.",
+  groups: [
     {
-      icon: "fire",
-      status: "Under Review",
-      venue: "Production and Operations Management",
-      title: "Sustainable Wildfire Management Meets Social Media",
-      summary:
-        "Shows how digital visibility shapes wildfire response costs and resource allocation using a temporal gravity score model.",
+      title: "Peer-Reviewed Publications",
+      items: [
+        {
+          icon: "fire",
+          label: "Published",
+          venue: "Production and Operations Management (2026)",
+          title:
+            "Sustainable Wildfire Management Meets Social Media: How Virtual Interaction Affects Wildfire Response Costs.",
+          summary:
+            "Introduces the Visibility Efficiency Paradox: social media visibility can accelerate dispatch intensity while weakening cost efficiency once resource use approaches saturation.",
+        },
+        {
+          icon: "globe",
+          label: "Published",
+          venue: "Discover Sustainability (2024)",
+          title:
+            "Digital strategies in wildfire management: Social media analytics and Web 3.0 integration.",
+          summary:
+            "Develops a wildfire decision-support framework using social media analytics for monitoring, prediction, and response.",
+          link: "https://doi.org/10.1007/s43621-024-00274-7",
+          linkLabel: "View publication",
+        },
+      ],
     },
     {
-      icon: "money",
-      status: "Under Review",
-      venue: "Journal of Policy Analysis and Management",
-      title: "When Do Budgetary Shocks Backfire?",
-      summary:
-        "Examines how federal-state funding gaps affect wildfire preparedness and why short-term gains can fade over time.",
-    },
-    {
-      icon: "globe",
-      status: "Published",
-      venue: "Discover Sustainability, 2024",
-      title: "Digital Strategies in Wildfire Management",
-      summary:
-        "Integrates social media analytics and Web 3.0 ideas into wildfire prediction, monitoring, and response planning.",
-      link: "https://doi.org/10.1007/s43621-024-00274-7",
-      linkLabel: "View publication",
+      title: "Selected Research",
+      items: [
+        {
+          icon: "money",
+          label: "Under Peer Review",
+          venue: "Journal of Environmental Management",
+          title:
+            "When Do Budgetary Shocks Backfire? Temporal Decoupling of Fiscal Signals under Climate Risk.",
+          summary:
+            "Studies how fiscal signals shape preparedness across budget cycles and why positive budget shocks can attenuate or reverse over time under climate risk.",
+        },
+        {
+          icon: "exchange",
+          label: "Under Peer Review",
+          venue: "Journal of Operations Management",
+          title:
+            "Trade-Tax Substitution and Fiscal Space: Regime-Dependent Evidence and a Policy Mapping.",
+          summary:
+            "Examines how firms reallocate adjustment across operating and tax-planning margins under trade-policy frictions.",
+        },
+        {
+          icon: "line-chart",
+          label: "Under Peer Review",
+          venue: "Management Science",
+          title:
+            "Cross-Channel Market Adjustment under a Dividend Tax Shock: Heterogeneous Responses and Coordination Frictions.",
+          summary:
+            "Shows that returns and turnover do not adjust in parallel after a common policy shock, highlighting coordination frictions in market adjustment.",
+        },
+        {
+          icon: "comments-o",
+          label: "Under Peer Review",
+          venue: "Decision Support Systems",
+          title:
+            "Beyond Prices: AI-Extracted Text Signals and Tail-Risk Calibration in Polymarket.",
+          summary:
+            "Tests whether AI-extracted text signals add value beyond price histories for downside-tail risk assessment in prediction markets.",
+        },
+      ],
     },
   ],
 };
@@ -169,52 +187,38 @@ export const media = [
 export const professionalExperience = [
   {
     title: "CIBC Mellon",
-    duration: "Oct 2025 - Present",
+    duration: "2025 - 2026",
     subtitle: "Director, Profitability and Pricing | Toronto, Canada",
     icon: "briefcase",
-    details: [
-      "Rebuilt profitability models to align cost drivers with capital allocation and enterprise pricing decisions.",
-      "Led AI and digital transformation work that shortened reporting cycles and improved model deployment.",
-    ],
+    details: [],
   },
   {
     title: "Scotiabank",
-    duration: "Feb 2023 - Oct 2025",
+    duration: "2023 - 2025",
     subtitle: "Manager, Investment Strategist | Toronto, Canada",
     icon: "line-chart",
-    details: [
-      "Built strategic dashboards and econometric forecasting tools for executive decision support.",
-      "Coordinated cross-region economic and market insights into unified investment publications.",
-    ],
+    details: [],
   },
   {
     title: "Central 1 Credit Union",
-    duration: "Mar 2022 - Jan 2023",
+    duration: "2022 - 2023",
     subtitle: "Credit and Financial Analyst | Toronto, Canada",
     icon: "area-chart",
-    details: [
-      "Developed ESG risk frameworks with investment and data teams.",
-      "Analyzed treasury holdings and improved risk-mitigation recommendations.",
-    ],
+    details: [],
   },
   {
     title: "Marret Asset Management",
-    duration: "Feb 2021 - Oct 2021",
-    subtitle: "Associate | Toronto, Canada",
+    duration: "2021 - 2022",
+    subtitle: "Associate, Fixed Income Research | Toronto, Canada",
     icon: "bar-chart",
-    details: [
-      "Built alpha-generation analytics from unstructured trading data.",
-      "Automated reporting workflows to reduce manual portfolio research work.",
-    ],
+    details: [],
   },
   {
     title: "Vinzan International Inc.",
-    duration: "Aug 2018 - Jul 2020",
+    duration: "2018 - 2020",
     subtitle: "Financial and Corporate Analyst | Toronto, Canada",
     icon: "calculator",
-    details: [
-      "Applied uplift modeling and logistic regression to test go-to-market strategies.",
-    ],
+    details: [],
   },
 ];
 
@@ -241,7 +245,7 @@ export const contactLinks = [
   },
   {
     label: "CV",
-    link: "Garros_CV.pdf",
+    link: "Garros_CV (3 Pages).pdf",
     icon: "fa fa-file-pdf-o",
   },
 ];
