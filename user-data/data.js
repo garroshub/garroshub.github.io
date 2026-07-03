@@ -1,17 +1,17 @@
 export const sidebar = {
   name: "Garros Gong, Ph.D.",
-  title: "Early-Career Researcher",
+  title: "Empirical Operations Management Researcher",
   meta: "University of Waterloo | Toronto, ON, Canada",
-  tagline: "Sustainable operations, organizational adaptation, and AI-enabled decision support.",
+  tagline: "Supply-chain resilience, organizational adaptation, and AI-enabled decision support.",
   image: "garros.jpg",
   email: "g7gong@uwaterloo.ca",
   linkedin: "https://www.linkedin.com/in/garros-gong/",
   github: "https://github.com/garroshub",
   scholar: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
   researchGate: "https://www.researchgate.net/profile/Garros-Gong?ev=hdr_xprf",
-  cv: "Garros_CV (3 Pages).pdf",
+  cv: "Garros_CV.pdf",
   actions: [
-    { label: "CV", link: "Garros_CV (3 Pages).pdf", primary: true },
+    { label: "CV", link: "Garros_CV.pdf", primary: true },
     {
       label: "Google Scholar",
       link: "https://scholar.google.ca/citations?user=uwfuukUAAAAJ&hl=en",
@@ -26,20 +26,20 @@ export const sidebar = {
 };
 
 export const bio = [
-  "I am a management science scholar whose research agenda begins in sustainable operations management and extends to how organizations and markets adapt under uncertainty.",
-  "Using economic modeling, empirical analysis, and causal inference, I study how information frictions, incentives, and institutional constraints shape resource allocation and decision quality across environmental systems, public budgeting, market adjustment, and AI-enabled decision support. My prior experience in the financial sector gives me a grounded perspective on the decisions and constraints I study.",
+  "I am an empirical operations management researcher whose work examines how organizations and markets adapt under uncertainty.",
+  "My research studies how information frictions, incentives, risk exposure, and operational constraints shape decision quality across supply chains, emergency response, prediction markets, and AI-enabled decision-support settings. My senior management experience in large financial organizations strengthens my industry connections and helps me bring applied analytics, finance, and managerial decision-making into the classroom.",
 ];
 
 export const hero = {
   icon: "user-o",
   title: "About Me",
   subtitle:
-    "Early-career researcher studying decisions under uncertainty across operations, markets, and AI.",
+    "Empirical operations researcher studying decisions under uncertainty across supply chains, markets, and AI-enabled decision support.",
   researchAreas: [
     { icon: "leaf", title: "Sustainable operations management" },
+    { icon: "sitemap", title: "Supply-chain resilience" },
     { icon: "random", title: "Organizational and market adaptation" },
     { icon: "lightbulb-o", title: "AI-enabled decision support" },
-    { icon: "sitemap", title: "Decision science" },
   ],
 };
 
@@ -64,7 +64,7 @@ export const education = [
     logo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
     details: [
       "Dissertation: Data-Driven Decision-Making Under Uncertainty: An Empirical Study of U.S. Wildfire Management.",
-      "Research Award: David Martell Student Paper Prize (2025).",
+      "Research Award: Finalist, Canadian Operational Research Society (CORS) Student Paper Competition (2026).",
     ],
   },
   {
@@ -86,7 +86,7 @@ export const education = [
 export const researchSection = {
   icon: "book",
   title: "Publications and Selected Research",
-  subtitle: "Peer-reviewed work and selected studies from the current CV.",
+  subtitle: "Peer-reviewed publications and selected studies from the current CV.",
   groups: [
     {
       title: "Peer-Reviewed Publications",
@@ -102,7 +102,7 @@ export const researchSection = {
           title:
             "Sustainable Wildfire Management Meets Social Media: How Virtual Interaction Affects Wildfire Response Costs.",
           summary:
-            "Introduces the Visibility Efficiency Paradox: social media visibility can accelerate dispatch intensity while weakening cost efficiency once resource use approaches saturation.",
+            "Introduces the Visibility Efficiency Paradox: public visibility can improve responsiveness while weakening cost efficiency when resource use approaches saturation.",
           link: "https://journals.sagepub.com/doi/10.1177/10591478261445692",
           linkLabel: "Read article",
         },
@@ -126,36 +126,40 @@ export const researchSection = {
       title: "Selected Research",
       items: [
         {
-          icon: "money",
-          label: "Under Peer Review",
+          icon: "sitemap",
+          label: "Major Revision",
+          venue: "Omega",
           title:
-            "When Do Budgetary Shocks Backfire? Temporal Decoupling of Fiscal Signals under Climate Risk.",
+            "Benchmarking Supply Chain Resilience: An Exposure-Conditioned Decision Framework.",
           summary:
-            "Studies how fiscal signals shape preparedness across budget cycles and why positive budget shocks can attenuate or reverse over time under climate risk.",
+            "Develops an exposure-conditioned benchmark for supply-chain resilience using supplier-customer stress and firm operating outcomes, with interpretable nonlinear risk diagnostics and out-of-sample validation.",
         },
         {
-          icon: "exchange",
+          icon: "random",
           label: "Under Peer Review",
+          venue: "Management Science",
           title:
-            "Trade-Tax Substitution and Fiscal Space: Regime-Dependent Evidence and a Policy Mapping.",
+            "Mechanism Uncertainty in Firm Adaptation to Supply-Chain Shocks: A Causal-Atlas Approach.",
           summary:
-            "Examines how firms reallocate adjustment across operating and tax-planning margins under trade-policy frictions.",
-        },
-        {
-          icon: "line-chart",
-          label: "Under Peer Review",
-          title:
-            "Cross-Channel Market Adjustment under a Dividend Tax Shock: Heterogeneous Responses and Coordination Frictions.",
-          summary:
-            "Shows that returns and turnover do not adjust in parallel after a common policy shock, highlighting coordination frictions in market adjustment.",
+            "Studies firm adaptation to supply-chain shocks when multiple recovery mechanisms are plausible, using a mechanism-atlas approach to evaluate theory-specified mechanism claims across admissible quasi-causal designs.",
         },
         {
           icon: "comments-o",
-          label: "Under Peer Review",
+          label: "Resubmitted",
+          venue: "Decision Sciences Journal",
           title:
-            "Beyond Prices: AI-Extracted Text Signals and Tail-Risk Calibration in Polymarket.",
+            "When Text Helps: AI Text Signals for Calibration-Sensitive Tail-Risk Decisions in Prediction Markets.",
           summary:
-            "Tests whether AI-extracted text signals add value beyond price histories for downside-tail risk assessment in prediction markets.",
+            "Studies when AI-extracted public text improves calibration-sensitive downside-risk assessment beyond price-based benchmarks in prediction markets.",
+        },
+        {
+          icon: "money",
+          label: "Major Revision",
+          venue: "Journal of Environmental Management",
+          title:
+            "When Do Budgetary Shocks Backfire? Temporal Decoupling of Fiscal Signals under Climate Risk.",
+          summary:
+            "Documents a preparedness funding paradox in U.S. wildfire management, showing that positive federal budget shocks can improve same-year alignment but attenuate or reverse over subsequent budget cycles.",
         },
       ],
     },
@@ -195,35 +199,41 @@ export const professionalExperience = [
     duration: "2025 - 2026",
     subtitle: "Director, Profitability and Pricing | Toronto, Canada",
     icon: "briefcase",
-    details: [],
+    details: [
+      "Led profitability, pricing analytics, and AI transformation initiatives in the finance division, linking cost drivers, client margins, and capital-allocation logic.",
+    ],
   },
   {
     title: "Scotiabank",
     duration: "2023 - 2025",
     subtitle: "Manager, Investment Strategist | Toronto, Canada",
     icon: "line-chart",
-    details: [],
+    details: [
+      "Developed macroeconomic, machine-learning, and factor-model analytics to support portfolio guidance and investment strategy across Canada and Latin America.",
+    ],
   },
   {
     title: "Central 1 Credit Union",
     duration: "2022 - 2023",
     subtitle: "Credit and Financial Analyst | Toronto, Canada",
     icon: "area-chart",
-    details: [],
+    details: ["Supported treasury portfolio analysis, liquidity planning, and risk monitoring."],
   },
   {
     title: "Marret Asset Management",
     duration: "2021 - 2022",
     subtitle: "Associate, Fixed Income Research | Toronto, Canada",
     icon: "bar-chart",
-    details: [],
+    details: [
+      "Built fixed-income research automation, market-data pipelines, and trading-signal analytics to support investment research and financial operations.",
+    ],
   },
   {
     title: "Vinzan International Inc.",
     duration: "2018 - 2020",
     subtitle: "Financial and Corporate Analyst | Toronto, Canada",
     icon: "calculator",
-    details: [],
+    details: ["Built valuation and pro forma models for corporate finance decisions."],
   },
 ];
 
@@ -250,7 +260,7 @@ export const contactLinks = [
   },
   {
     label: "CV",
-    link: "Garros_CV (3 Pages).pdf",
+    link: "Garros_CV.pdf",
     icon: "fa fa-file-pdf-o",
   },
 ];
