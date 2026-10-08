@@ -356,14 +356,18 @@ function publishedPreviewCardTemplate(item) {
 
 function researchItemTemplate(item) {
   return html`
-    <article class="research-item animate-box" data-animate-effect="fadeInUp">
-      <div class="research-top">
-        <span class="pill-icon small" aria-hidden="true">
-          <i class="fa fa-${item.icon}"></i>
-        </span>
-        <span class="research-label">${item.label}</span>
-        ${item.venue ? html`<span class="research-venue">${item.venue}</span>` : null}
-      </div>
+    <article class="research-item ${item.label || item.venue ? "" : "research-item-plain"} animate-box" data-animate-effect="fadeInUp">
+      ${item.label || item.venue
+        ? html`
+            <div class="research-top">
+              <span class="pill-icon small" aria-hidden="true">
+                <i class="fa fa-${item.icon}"></i>
+              </span>
+              ${item.label ? html`<span class="research-label">${item.label}</span>` : null}
+              ${item.venue ? html`<span class="research-venue">${item.venue}</span>` : null}
+            </div>
+          `
+        : null}
       <h3 class="research-title">${item.title}</h3>
       <p class="research-summary">${item.summary}</p>
       ${item.link
