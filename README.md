@@ -21,3 +21,7 @@ py -m http.server 8000
 ```
 
 Open: http://localhost:8000/
+
+## Updating academic content
+
+The publication list, editorial statuses, open-source projects, teaching, and employment details are maintained in `user-data/data.js`. Update them when the academic CV changes. This refresh uses the June 2026 base CV. Site sections are rendered by `index.js` and laid out in `index.html`. The separate public `Garros_CV.pdf` must also be kept current.
