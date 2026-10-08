@@ -1014,3 +1014,9 @@ body.modal-open {
     overflow-y: auto;
   }
 }
+
+/* Academic homepage 2026 refresh */
+.publication-preview-mde .publication-preview-art { background: linear-gradient(140deg,#274865,#598991); }
+.publication-preview-grid { grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); }
+.demo-link { margin-left: 18px; }
+@media(max-width:640px){ .publication-preview-grid { grid-template-columns: 1fr; } .demo-link { margin-left:0; } }
