@@ -6,6 +6,8 @@ import {
   collabCta,
   education,
   researchSection,
+  projectSection,
+  teaching,
   media,
   professionalExperience,
   contactLinks,
@@ -354,14 +356,18 @@ function publishedPreviewCardTemplate(item) {
 
 function researchItemTemplate(item) {
   return html`
-    <article class="research-item animate-box" data-animate-effect="fadeInUp">
-      <div class="research-top">
-        <span class="pill-icon small" aria-hidden="true">
-          <i class="fa fa-${item.icon}"></i>
-        </span>
-        <span class="research-label">${item.label}</span>
-        ${item.venue ? html`<span class="research-venue">${item.venue}</span>` : null}
-      </div>
+    <article class="research-item ${item.label || item.venue ? "" : "research-item-plain"} animate-box" data-animate-effect="fadeInUp">
+      ${item.label || item.venue
+        ? html`
+            <div class="research-top">
+              <span class="pill-icon small" aria-hidden="true">
+                <i class="fa fa-${item.icon}"></i>
+              </span>
+              ${item.label ? html`<span class="research-label">${item.label}</span>` : null}
+              ${item.venue ? html`<span class="research-venue">${item.venue}</span>` : null}
+            </div>
+          `
+        : null}
       <h3 class="research-title">${item.title}</h3>
       <p class="research-summary">${item.summary}</p>
       ${item.link
@@ -371,6 +377,7 @@ function researchItemTemplate(item) {
             </a>
           `
         : null}
+      ${item.demoLink ? html`<a class="text-link demo-link" href="${item.demoLink}" target="_blank" rel="noopener noreferrer">${item.demoLabel || "Demo"}</a>` : null}
     </article>
   `;
 }
@@ -484,7 +491,7 @@ function experienceEntryTemplate(item, options = {}) {
   `;
 }
 
-function populateExperience(items, id) {
+function populateExperience(items, id, config = {}) {
   const el = document.getElementById(id);
   if (!el || !items?.length) {
     return;
@@ -494,8 +501,8 @@ function populateExperience(items, id) {
     html`
       ${sectionHeaderTemplate({
         icon: "briefcase",
-        title: "Professional Experience",
-        subtitle: "Industry experience that informs my research questions and applied perspective.",
+        title: config.title || "Professional Experience",
+        subtitle: config.subtitle || "Industry experience that informs my research questions and applied perspective.",
       })}
       <div class="record-list">
         ${items.map((item) => experienceEntryTemplate(item, { showMarker: false }))}
@@ -536,6 +543,8 @@ populateCollabCta(collabCta, "collab-cta");
 populateAbout(hero, bio, "hero");
 populateEducation(education, "education");
 populateResearchSection(researchSection, "featured-publications");
+populateResearchSection(projectSection, "projects");
+populateExperience(teaching, "teaching", { title: "Teaching", subtitle: "Financial Analytics classroom experience and courses prepared to teach." });
 populateMedia(media, "media");
 populateExperience(professionalExperience, "experience");
 populateSidebarLinks(contactLinks, "sidebar-links");

@@ -1014,3 +1014,15 @@ body.modal-open {
     overflow-y: auto;
   }
 }
+
+/* Academic homepage 2026 refresh */
+.publication-preview-mde .publication-preview-art { background: linear-gradient(140deg,#274865,#598991); }
+.publication-preview-grid { grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); }
+.demo-link { margin-left: 18px; }
+@media(max-width:640px){ .publication-preview-grid { grid-template-columns: 1fr; } .demo-link { margin-left:0; } }
+
+/* Keep all three published papers visible on large screens. */
+@media screen and (min-width: 1161px) {
+  .publication-preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.research-item-plain .research-title { margin-top: 0; }
