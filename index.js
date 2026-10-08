@@ -6,6 +6,8 @@ import {
   collabCta,
   education,
   researchSection,
+  projectSection,
+  teaching,
   media,
   professionalExperience,
   contactLinks,
@@ -371,6 +373,7 @@ function researchItemTemplate(item) {
             </a>
           `
         : null}
+      ${item.demoLink ? html`<a class="text-link demo-link" href="${item.demoLink}" target="_blank" rel="noopener noreferrer">${item.demoLabel || "Demo"}</a>` : null}
     </article>
   `;
 }
@@ -484,7 +487,7 @@ function experienceEntryTemplate(item, options = {}) {
   `;
 }
 
-function populateExperience(items, id) {
+function populateExperience(items, id, config = {}) {
   const el = document.getElementById(id);
   if (!el || !items?.length) {
     return;
@@ -494,8 +497,8 @@ function populateExperience(items, id) {
     html`
       ${sectionHeaderTemplate({
         icon: "briefcase",
-        title: "Professional Experience",
-        subtitle: "Industry experience that informs my research questions and applied perspective.",
+        title: config.title || "Professional Experience",
+        subtitle: config.subtitle || "Industry experience that informs my research questions and applied perspective.",
       })}
       <div class="record-list">
         ${items.map((item) => experienceEntryTemplate(item, { showMarker: false }))}
@@ -536,6 +539,8 @@ populateCollabCta(collabCta, "collab-cta");
 populateAbout(hero, bio, "hero");
 populateEducation(education, "education");
 populateResearchSection(researchSection, "featured-publications");
+populateResearchSection(projectSection, "projects");
+populateExperience(teaching, "teaching", { title: "Teaching", subtitle: "Financial Analytics classroom experience and courses prepared to teach." });
 populateMedia(media, "media");
 populateExperience(professionalExperience, "experience");
 populateSidebarLinks(contactLinks, "sidebar-links");
