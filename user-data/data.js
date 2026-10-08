@@ -1,7 +1,7 @@
 export const sidebar = {
   name: "Garros Gong, Ph.D.",
-  title: "Empirical Operations Management Researcher",
-  meta: "University of Waterloo | Toronto, ON, Canada",
+  title: "Empirical Operations Management & Business Analytics",
+  meta: "Ph.D., University of Waterloo (2026) | Toronto, Canada",
   tagline: "Supply-chain resilience, organizational adaptation, and AI-enabled decision support.",
   image: "garros.jpg",
   email: "g7gong@uwaterloo.ca",
@@ -32,7 +32,7 @@ export const bio = [
 
 export const hero = {
   icon: "user-o",
-  title: "About Me",
+  title: "Research Profile",
   subtitle:
     "Empirical operations researcher studying decisions under uncertainty across supply chains, markets, and AI-enabled decision support.",
   researchAreas: [
@@ -59,7 +59,7 @@ export const collabCta = {
 export const education = [
   {
     title: "University of Waterloo",
-    duration: "Oct 2025",
+    duration: "Jun 2026",
     subtitle: "Ph.D. in Management Sciences (OR)",
     logo: "https://upload.wikimedia.org/wikipedia/en/6/6e/University_of_Waterloo_seal.svg",
     details: [
@@ -84,87 +84,177 @@ export const education = [
 ];
 
 export const researchSection = {
-  icon: "book",
-  title: "Publications and Selected Research",
-  subtitle: "Peer-reviewed publications and selected studies from the current CV.",
-  groups: [
+  "icon": "book",
+  "title": "Publications and Selected Research",
+  "subtitle": "Peer-reviewed publications, manuscripts in review, and ongoing work from my base academic CV.",
+  "groups": [
     {
-      title: "Peer-Reviewed Publications",
-      layout: "preview",
-      items: [
+      "title": "Peer-Reviewed Publications",
+      "layout": "preview",
+      "items": [
         {
-          icon: "fire",
-          label: "Published",
-          venue: "Production and Operations Management (2026)",
-          imageSrc: "https://www.google.com/s2/favicons?domain=journals.sagepub.com&sz=128",
-          imageAlt: "Production and Operations Management",
-          theme: "pom",
-          title:
-            "Sustainable Wildfire Management Meets Social Media: How Virtual Interaction Affects Wildfire Response Costs.",
-          summary:
-            "Introduces the Visibility Efficiency Paradox: public visibility can improve responsiveness while weakening cost efficiency when resource use approaches saturation.",
-          link: "https://journals.sagepub.com/doi/10.1177/10591478261445692",
-          linkLabel: "Read article",
+          "icon": "book",
+          "label": "Published",
+          "venue": "Production and Operations Management (2026)",
+          "title": "Sustainable Wildfire Management Meets Social Media: How Virtual Interaction Affects Wildfire Response Costs",
+          "summary": "Public visibility is associated with greater wildfire resource mobilization but also higher costs per acre when response systems are heavily loaded: the Visibility-Efficiency Paradox.",
+          "link": "https://doi.org/10.1177/10591478261445692",
+          "linkLabel": "Read article",
+          "theme": "pom",
+          "imageSrc": "https://www.google.com/s2/favicons?domain=journals.sagepub.com&sz=128",
+          "imageAlt": "Production and Operations Management (2026)"
         },
         {
-          icon: "globe",
-          label: "Published",
-          venue: "Discover Sustainability (2024)",
-          imageSrc: "https://www.google.com/s2/favicons?domain=link.springer.com&sz=128",
-          imageAlt: "Discover Sustainability",
-          theme: "springer",
-          title:
-            "Digital strategies in wildfire management: Social media analytics and Web 3.0 integration.",
-          summary:
-            "Develops a wildfire decision-support framework using social media analytics for monitoring, prediction, and response.",
-          link: "https://link.springer.com/article/10.1007/s43621-024-00274-7",
-          linkLabel: "Read article",
+          "icon": "book",
+          "label": "Published",
+          "venue": "Managerial and Decision Economics (2026)",
+          "title": "Trade-Policy Exposure and Managerial Adjustment Margins: Regime-Dependent Evidence from Corporate Tax-Base Outcomes",
+          "summary": "Examines tariff exposure, tax-planning decisions, and managerial adjustment across the 2018 U.S. tax reform.",
+          "link": "https://doi.org/10.1002/mde.70150",
+          "linkLabel": "Read article",
+          "theme": "mde",
+          "imageSrc": "https://www.google.com/s2/favicons?domain=onlinelibrary.wiley.com&sz=128",
+          "imageAlt": "Managerial and Decision Economics (2026)"
         },
-      ],
+        {
+          "icon": "book",
+          "label": "Published",
+          "venue": "Discover Sustainability (2024)",
+          "title": "Digital Strategies in Wildfire Management: Social Media Analytics and Web 3.0 Integration",
+          "summary": "Develops a framework for social-media analytics and digital coordination in wildfire monitoring, prediction, and response.",
+          "link": "https://doi.org/10.1007/s43621-024-00274-7",
+          "linkLabel": "Read article",
+          "theme": "springer",
+          "imageSrc": "https://www.google.com/s2/favicons?domain=link.springer.com&sz=128",
+          "imageAlt": "Discover Sustainability (2024)"
+        }
+      ]
     },
     {
-      title: "Selected Research",
-      items: [
+      "title": "Selected Research",
+      "items": [
         {
-          icon: "sitemap",
-          label: "Major Revision",
-          venue: "Omega",
-          title:
-            "Benchmarking Supply Chain Resilience: An Exposure-Conditioned Decision Framework.",
-          summary:
-            "Develops an exposure-conditioned benchmark for supply-chain resilience using supplier-customer stress and firm operating outcomes, with interpretable nonlinear risk diagnostics and out-of-sample validation.",
+          "icon": "file-text-o",
+          "label": "Major Revision",
+          "venue": "Omega",
+          "title": "Benchmarking Supply Chain Resilience: An Exposure-Conditioned Decision-Support Framework",
+          "summary": "Builds an exposure-conditioned resilience benchmark and evaluates its predictive and downstream decision value."
         },
         {
-          icon: "random",
-          label: "Under Peer Review",
-          venue: "Management Science",
-          title:
-            "Mechanism Uncertainty in Firm Adaptation to Supply-Chain Shocks: A Causal-Atlas Approach.",
-          summary:
-            "Studies firm adaptation to supply-chain shocks when multiple recovery mechanisms are plausible, using a mechanism-atlas approach to evaluate theory-specified mechanism claims across admissible quasi-causal designs.",
+          "icon": "file-text-o",
+          "label": "Under Peer Review",
+          "venue": "Management Science · Solo-authored",
+          "title": "The Task-Specific Predictive and Decision Value of Customer Reconfiguration",
+          "summary": "Examines when network movement helps forecast customer-network instability and support monitoring decisions under resource constraints."
         },
         {
-          icon: "comments-o",
-          label: "Resubmitted",
-          venue: "Decision Sciences Journal",
-          title:
-            "When Text Helps: AI Text Signals for Calibration-Sensitive Tail-Risk Decisions in Prediction Markets.",
-          summary:
-            "Studies when AI-extracted public text improves calibration-sensitive downside-risk assessment beyond price-based benchmarks in prediction markets.",
+          "icon": "file-text-o",
+          "label": "Major Revision",
+          "venue": "Decision Sciences Journal",
+          "title": "When Text Helps: AI Text Signals for Calibration-Sensitive Tail-Risk Decisions in Prediction Markets",
+          "summary": "Studies when AI-text measures improve tail-risk calibration and selected threshold decisions.",
+          "link": "https://papers.ssrn.com/abstract=7005158",
+          "linkLabel": "Working paper"
         },
         {
-          icon: "money",
-          label: "Major Revision",
-          venue: "Journal of Environmental Management",
-          title:
-            "When Do Budgetary Shocks Backfire? Temporal Decoupling of Fiscal Signals under Climate Risk.",
-          summary:
-            "Documents a preparedness funding paradox in U.S. wildfire management, showing that positive federal budget shocks can improve same-year alignment but attenuate or reverse over subsequent budget cycles.",
+          "icon": "file-text-o",
+          "label": "Under Peer Review",
+          "venue": "Manufacturing & Service Operations Management",
+          "title": "Risk-Responsive Public Resource Allocation: Evidence and Decision Design in U.S. Wildfire Management",
+          "summary": "Evaluates bounded, risk-guided adjustments to recurring wildfire resource allocations."
         },
-      ],
+        {
+          "icon": "file-text-o",
+          "label": "Under Peer Review",
+          "venue": "Strategic Management Journal",
+          "title": "Integration Without Synchronization: Stage–Channel Fit in Firms' Climate Strategies Under Political Rollback Signals",
+          "summary": "Studies how firms adjust climate strategies across political uncertainty stages."
+        },
+        {
+          "icon": "file-text-o",
+          "label": "Under Peer Review",
+          "venue": "Journal of International Financial Management & Accounting",
+          "title": "A Multi-Margin View of Financial Decisions: Valuation and Trading Around the 2013 U.S. Tax Changes",
+          "summary": "Investigates valuation and trading responses around changes in U.S. tax policy."
+        }
+      ]
     },
-  ],
+    {
+      "title": "Ongoing Research",
+      "items": [
+        {
+          "icon": "file-text-o",
+          "label": "Research Pipeline",
+          "venue": "Supply-chain analytics",
+          "title": "Post-Shock Supply-Chain Adaptation",
+          "summary": "Uses uncertainty-aware ML to assess sensitivity of network estimates to unobserved supplier weights."
+        },
+        {
+          "icon": "file-text-o",
+          "label": "Research Pipeline",
+          "venue": "Supply-chain analytics",
+          "title": "Supplier Escape Capacity",
+          "summary": "Tests how pre-shock sourcing flexibility influences supplier reallocation following trade-policy shocks."
+        }
+      ]
+    }
+  ]
 };
+
+export const projectSection = {
+  "icon": "cogs",
+  "title": "AI-Enabled Decision Projects",
+  "subtitle": "Open-source tools connecting economic models, ML, and evidence-grounded AI decisions.",
+  "groups": [
+    {
+      "title": "Tools and Demos",
+      "items": [
+        {
+          "icon": "file-text-o",
+          "label": "Open Source",
+          "venue": "Macroeconomics and ML",
+          "title": "AI Economist Skill",
+          "summary": "Agent skill for U.S. and Canadian GDP nowcasting and policy diagnostics, using structural baselines, bounded ML calibration, and release-aware validation.",
+          "link": "https://github.com/garroshub/ai-economist-skill",
+          "linkLabel": "GitHub repository",
+          "demoLink": "https://garroshub.github.io/ai-economist-skill/",
+          "demoLabel": "Live dashboard"
+        },
+        {
+          "icon": "file-text-o",
+          "label": "Open Source",
+          "venue": "Financial prediction and agent governance",
+          "title": "Agent Decision Harness",
+          "summary": "Configurable framework for specialist qualification, conditional forecasting authority, and consistency checks on evidence-backed financial predictions.",
+          "link": "https://github.com/garroshub/AgentDecisionHarness",
+          "linkLabel": "GitHub repository",
+          "demoLink": "https://garroshub.github.io/AgentDecisionHarness/page-demo/",
+          "demoLabel": "Interactive demo"
+        }
+      ]
+    }
+  ]
+};
+
+export const teaching = [
+  {
+    "title": "Centennial College",
+    "duration": "2022–2023",
+    "subtitle": "Adjunct Professor — Financial Analytics",
+    "details": [
+      "Instructor of record for Financial Analytics.",
+      "Student evaluation: 4.25/5.00."
+    ]
+  },
+  {
+    "title": "Courses Prepared to Teach",
+    "duration": "Teaching interests",
+    "subtitle": "Operations Management · Business Analytics · Management Science · AI in Business",
+    "details": [
+      "Decision-focused teaching that connects business problems, quantitative models, and practical constraints."
+    ]
+  }
+];
 
 export const media = [
   {
