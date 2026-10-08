@@ -38,7 +38,6 @@ export const hero = {
   researchAreas: [
     { icon: "leaf", title: "Sustainable operations management" },
     { icon: "sitemap", title: "Supply-chain resilience" },
-    { icon: "random", title: "Organizational and market adaptation" },
     { icon: "lightbulb-o", title: "AI-enabled decision support" },
   ],
 };
@@ -86,7 +85,7 @@ export const education = [
 export const researchSection = {
   "icon": "book",
   "title": "Publications and Selected Research",
-  "subtitle": "Peer-reviewed publications, manuscripts in review, and ongoing work from my base academic CV.",
+  "subtitle": "Three peer-reviewed journal publications, selected studies, and ongoing research.",
   "groups": [
     {
       "title": "Peer-Reviewed Publications",
@@ -135,22 +134,16 @@ export const researchSection = {
       "items": [
         {
           "icon": "file-text-o",
-          "label": "Major Revision",
-          "venue": "Omega",
           "title": "Benchmarking Supply Chain Resilience: An Exposure-Conditioned Decision-Support Framework",
           "summary": "Builds an exposure-conditioned resilience benchmark and evaluates its predictive and downstream decision value."
         },
         {
           "icon": "file-text-o",
-          "label": "Under Peer Review",
-          "venue": "Management Science · Solo-authored",
           "title": "The Task-Specific Predictive and Decision Value of Customer Reconfiguration",
           "summary": "Examines when network movement helps forecast customer-network instability and support monitoring decisions under resource constraints."
         },
         {
           "icon": "file-text-o",
-          "label": "Major Revision",
-          "venue": "Decision Sciences Journal",
           "title": "When Text Helps: AI Text Signals for Calibration-Sensitive Tail-Risk Decisions in Prediction Markets",
           "summary": "Studies when AI-text measures improve tail-risk calibration and selected threshold decisions.",
           "link": "https://papers.ssrn.com/abstract=7005158",
@@ -158,22 +151,16 @@ export const researchSection = {
         },
         {
           "icon": "file-text-o",
-          "label": "Under Peer Review",
-          "venue": "Manufacturing & Service Operations Management",
           "title": "Risk-Responsive Public Resource Allocation: Evidence and Decision Design in U.S. Wildfire Management",
           "summary": "Evaluates bounded, risk-guided adjustments to recurring wildfire resource allocations."
         },
         {
           "icon": "file-text-o",
-          "label": "Under Peer Review",
-          "venue": "Strategic Management Journal",
           "title": "Integration Without Synchronization: Stage–Channel Fit in Firms' Climate Strategies Under Political Rollback Signals",
           "summary": "Studies how firms adjust climate strategies across political uncertainty stages."
         },
         {
           "icon": "file-text-o",
-          "label": "Under Peer Review",
-          "venue": "Journal of International Financial Management & Accounting",
           "title": "A Multi-Margin View of Financial Decisions: Valuation and Trading Around the 2013 U.S. Tax Changes",
           "summary": "Investigates valuation and trading responses around changes in U.S. tax policy."
         }
